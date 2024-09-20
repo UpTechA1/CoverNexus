@@ -32,7 +32,7 @@ class Test_Lead_Agent():
             if state["current_iteration"] != 0:
                 self.system_prompt = """You are responsible for determining next steps for it based on the coverage score of a specific codebase file named """ + CODEBASE + """. 
     If the coverage score meets the required threshold specified in """ + config + """ and does not exist any errors or failure, the next agent will be """ + FINISH + """. Otherwise, assign the next agent as """ + GENERATOR + """ due to the lower coverage score and errors/failure encountered.
-    You should guide next agent to generate a test script with high coverage score step by step if there is any error then modify error testcases; require next agent to provide use subtest of Unitest for testcases
+    You should guide next agent to generate a test script with high coverage score step by step if there is any error then modify error testcases; require next agent to provide use subtest
 
     Use the following information to provide the instruction:
     - Codebase script: """ + codebase_script + """
@@ -43,7 +43,7 @@ class Test_Lead_Agent():
             else:
                 self.system_prompt = """You are responsible for determining next steps for it based on the coverage score of a specific codebase file named """ + CODEBASE + """. 
     If the coverage score meets the required threshold specified in """ + config + """ and does not exist any errors or failure, the next agent will be """ + FINISH + """. Otherwise, assign the next agent as """ + GENERATOR + """ due to the lower coverage score and errors/failure encountered.
-    You should guide next agent to generate a test script with high coverage score step by step if there is any error then modify error testcases; require next agent to provide use subtest of Unitest for testcases
+    You should guide next agent to generate a test script with high coverage score step by step if there is any error then modify error testcases; require next agent to provide use subtest in format of given testbase
 
     Use the following information to provide the instruction:
     - Codebase script: """ + codebase_script + """

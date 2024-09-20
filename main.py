@@ -6,11 +6,12 @@ load_dotenv()
 current_directory = os.getcwd()
 parent_directory = os.path.dirname(current_directory)
 sys.path.append(parent_directory)
-
+import subprocess
 from covernexus.covernexus import CoverNexus
 from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 import json
+import re
 
 class Settings:
     def __init__(self, args):
@@ -59,6 +60,21 @@ class Settings:
         self.graph = CoverNexus(self.llm1, self.llm2)
     
     def run(self):
+        if self.args.test_file_path != "":
+            with open(self.args.test_file_path, "r") as f:
+                test_script = f.read()
+            subprocess.run(["coverage", "run", self.args.test_file_path], check=True)
+            result = subprocess.run(["coverage", "report", "-m", self.args.source_file_path], capture_output=True, text=True, check=True)
+            match = re.search(f'{self.args.source_file_path}.* (\d+%)', result.stdout)
+            if match:
+                coverage_percentage = match.group(1)
+                coverage_percentage = float(coverage_percentage[:-1])
+            else:
+                coverage_percentage = 0
+            print(f"Initial coverage: {coverage_percentage}")
+            print(result.stdout)
+            self.config["current_testbase_coverage"] = coverage_percentage
+            
         state = self.graph({'thoughts':[], 
             "config": self.config, 
             "instruction": "", 
