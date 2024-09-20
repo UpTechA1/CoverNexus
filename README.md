@@ -4,7 +4,7 @@ CoverNexus is an innovative multi-agent system that leverages Large Language Mod
 
 CoverNexus has been rigorously evaluated using **CoverBench**, a new benchmark based on **HumanEval**, specifically designed for assessing test generation and coverage improvement. Our experiments show that CoverNexus achieves remarkable results, with **GPT-4** delivering **99.91% coverage** and **77.44% correctness** in multi-agent setups. Notably, closed-source models perform better in multi-agent configurations, while open-source models excel in single-agent scenarios. This research offers significant insights into the trade-offs between coverage and correctness, contributing to AI-assisted software testing and more efficient software development processes.
 
-[![Watch the video](https://img.youtube.com/vi/fQ0LGiA0JdE/maxresdefault.jpg)](https://youtu.be/fQ0LGiA0JdE)
+[![Watch the video](demo.gif)](https://youtu.be/fQ0LGiA0JdE)
 
 ---
 
