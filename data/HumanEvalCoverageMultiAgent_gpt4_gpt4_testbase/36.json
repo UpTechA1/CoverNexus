@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/36",
+    "prompt": "\n\ndef fizz_buzz(n: int):\n    \"\"\"Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.\n    >>> fizz_buzz(50)\n    0\n    >>> fizz_buzz(78)\n    2\n    >>> fizz_buzz(79)\n    3\n    \"\"\"\n",
+    "canonical_solution": "    ns = []\n    for i in range(n):\n        if i % 11 == 0 or i % 13 == 0:\n            ns.append(i)\n    s = ''.join(list(map(str, ns)))\n    ans = 0\n    for c in s:\n        ans += (c == '7')\n    return ans\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(50) == 0\n    assert candidate(78) == 2\n    assert candidate(79) == 3\n    assert candidate(100) == 3\n    assert candidate(200) == 6\n    assert candidate(4000) == 192\n    assert candidate(10000) == 639\n    assert candidate(100000) == 8026\n\n",
+    "entry_point": "fizz_buzz",
+    "testbase": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+    "first_generated_test_script": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+    "not_error_best_generated_test_script": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+    "filtered_generated_test_script": "from method import fizz_buzz\ndef check(candidate):\n    assert candidate(10000) == 639\n\n\nif __name__ == '__main__':\n    check(fizz_buzz)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

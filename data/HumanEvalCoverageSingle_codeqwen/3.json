@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/3",
+    "prompt": "from typing import List\n\n\ndef below_zero(operations: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal operations on a bank account that starts with\n    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> below_zero([1, 2, 3])\n    False\n    >>> below_zero([1, 2, -4, 5])\n    True\n    \"\"\"\n",
+    "canonical_solution": "    balance = 0\n\n    for op in operations:\n        balance += op\n        if balance < 0:\n            return True\n\n    return False\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == False\n    assert candidate([1, 2, -3, 1, 2, -3]) == False\n    assert candidate([1, 2, -4, 5, 6]) == True\n    assert candidate([1, -1, 2, -2, 5, -5, 4, -4]) == False\n    assert candidate([1, -1, 2, -2, 5, -5, 4, -5]) == True\n    assert candidate([1, -2, 2, -2, 5, -5, 4, -4]) == True\n",
+    "entry_point": "below_zero",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBelowZero(unittest.TestCase):\n    def test_positive_operations(self):\n        self.assertFalse(below_zero([1, 2, 3]))\n\n    def test_negative_operations(self):\n        self.assertTrue(below_zero([1, 2, -4, 5]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       8      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 8      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBelowZero(unittest.TestCase):\n    def test_positive_operations(self):\n        self.assertFalse(below_zero([1, 2, 3]))\n\n    def test_negative_operations(self):\n        self.assertTrue(below_zero([1, 2, -4, 5]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBelowZero(unittest.TestCase):\n    def test_positive_operations(self):\n        self.assertFalse(below_zero([1, 2, 3]))\n\n    def test_negative_operations(self):\n        self.assertTrue(below_zero([1, 2, -4, 5]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBelowZero(unittest.TestCase):\n    def test_positive_operations(self):\n        self.assertFalse(below_zero([1, 2, 3]))\n\n    def test_negative_operations(self):\n        self.assertTrue(below_zero([1, 2, -4, 5]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBelowZero(unittest.TestCase):\n    def test_positive_operations(self):\n        self.assertFalse(below_zero([1, 2, 3]))\n\n    def test_negative_operations(self):\n        self.assertTrue(below_zero([1, 2, -4, 5]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

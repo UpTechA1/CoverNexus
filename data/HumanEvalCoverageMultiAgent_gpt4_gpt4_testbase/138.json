@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/138",
+    "prompt": "\ndef is_equal_to_sum_even(n):\n    \"\"\"Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers\n    Example\n    is_equal_to_sum_even(4) == False\n    is_equal_to_sum_even(6) == False\n    is_equal_to_sum_even(8) == True\n    \"\"\"\n",
+    "canonical_solution": "    return n%2 == 0 and n >= 8\n",
+    "test": "def check(candidate):\n    assert candidate(4) == False\n    assert candidate(6) == False\n    assert candidate(8) == True\n    assert candidate(10) == True\n    assert candidate(11) == False\n    assert candidate(12) == True\n    assert candidate(13) == False\n    assert candidate(16) == True\n",
+    "entry_point": "is_equal_to_sum_even",
+    "testbase": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+    "first_generated_test_script": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+    "not_error_best_generated_test_script": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+    "filtered_generated_test_script": "from method import is_equal_to_sum_even\ndef check(candidate):\n    assert candidate(13) == False\n\n\nif __name__ == '__main__':\n    check(is_equal_to_sum_even)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

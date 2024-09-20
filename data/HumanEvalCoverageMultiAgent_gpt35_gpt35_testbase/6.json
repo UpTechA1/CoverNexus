@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/6",
+    "prompt": "from typing import List\n\n\ndef parse_nested_parens(paren_string: str) -> List[int]:\n    \"\"\" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.\n    For each of the group, output the deepest level of nesting of parentheses.\n    E.g. (()()) has maximum two levels of nesting while ((())) has three.\n\n    >>> parse_nested_parens('(()()) ((())) () ((())()())')\n    [2, 3, 1, 3]\n    \"\"\"\n",
+    "canonical_solution": "    def parse_paren_group(s):\n        depth = 0\n        max_depth = 0\n        for c in s:\n            if c == '(':\n                depth += 1\n                max_depth = max(depth, max_depth)\n            else:\n                depth -= 1\n\n        return max_depth\n\n    return [parse_paren_group(x) for x in paren_string.split(' ') if x]\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('(()()) ((())) () ((())()())') == [2, 3, 1, 3]\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n    assert candidate('(()(())((())))') == [4]\n",
+    "entry_point": "parse_nested_parens",
+    "testbase": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+            "coverage": 100,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+    "first_generated_test_script": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+    "not_error_best_generated_test_script": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+    "filtered_generated_test_script": "from method import parse_nested_parens\nfrom typing import List\n\n\ndef check(candidate):\n    assert candidate('() (()) ((())) (((())))') == [1, 2, 3, 4]\n\n\nif __name__ == '__main__':\n    check(parse_nested_parens)\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

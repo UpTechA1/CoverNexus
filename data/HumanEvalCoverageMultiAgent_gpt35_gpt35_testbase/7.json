@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/7",
+    "prompt": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['abc', 'bacd', 'array']\n    \"\"\"\n",
+    "canonical_solution": "    return [x for x in strings if substring in x]\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([], 'john') == []\n    assert candidate(['xxx', 'asd', 'xxy', 'john doe', 'xxxAAA', 'xxx'], 'xxx') == ['xxx', 'xxxAAA', 'xxx']\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'], 'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n    assert candidate(['grunt', 'trumpet', 'prune', 'gruesome'], 'run') == ['grunt', 'prune']\n",
+    "entry_point": "filter_by_substring",
+    "testbase": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+            "coverage": 100,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+    "first_generated_test_script": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+    "not_error_best_generated_test_script": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+    "filtered_generated_test_script": "from method import filter_by_substring\ndef check(candidate):\n    assert candidate(['xxx', 'asd', 'aaaxxy', 'john doe', 'xxxAAA', 'xxx'],\n        'xx') == ['xxx', 'aaaxxy', 'xxxAAA', 'xxx']\n\n\nif __name__ == '__main__':\n    check(filter_by_substring)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/24",
+    "prompt": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n",
+    "canonical_solution": "    for i in reversed(range(n)):\n        if n % i == 0:\n            return i\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3) == 1\n    assert candidate(7) == 1\n    assert candidate(10) == 5\n    assert candidate(100) == 50\n    assert candidate(49) == 7\n",
+    "entry_point": "largest_divisor",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestLargestDivisor(unittest.TestCase):\n    def test_largest_divisor(self):\n        self.assertEqual(largest_divisor(15), 5)\n        self.assertEqual(largest_divisor(28), 14)\n        self.assertEqual(largest_divisor(49), 7)\n        self.assertEqual(largest_divisor(50), 25)\n        self.assertEqual(largest_divisor(1), 1)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "E\n======================================================================\nERROR: test_largest_divisor (__main__.TestLargestDivisor.test_largest_divisor)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/generated_test.py\", line 11, in test_largest_divisor\n    self.assertEqual(largest_divisor(1), 1)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py\", line 9, in largest_divisor\n    if n % i == 0:\n       ~~^~~\nZeroDivisionError: integer modulo by zero\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       4      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 4      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestLargestDivisor(unittest.TestCase):\n    def test_largest_divisor(self):\n        self.assertEqual(largest_divisor(15), 5)\n        self.assertEqual(largest_divisor(28), 14)\n        self.assertEqual(largest_divisor(49), 7)\n        self.assertEqual(largest_divisor(50), 25)\n        self.assertEqual(largest_divisor(1), 1)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestLargestDivisor(unittest.TestCase):\n    def test_largest_divisor(self):\n        self.assertEqual(largest_divisor(15), 5)\n        self.assertEqual(largest_divisor(28), 14)\n        self.assertEqual(largest_divisor(49), 7)\n        self.assertEqual(largest_divisor(50), 25)\n        self.assertEqual(largest_divisor(1), 1)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\n\n\nclass TestLargestDivisor(unittest.TestCase):\n\n    def test_largest_divisor_1(self):\n        self.assertEqual(largest_divisor(15), 5)\n\n    def test_largest_divisor_2(self):\n        self.assertEqual(largest_divisor(28), 14)\n\n    def test_largest_divisor_3(self):\n        self.assertEqual(largest_divisor(49), 7)\n\n    def test_largest_divisor_4(self):\n        self.assertEqual(largest_divisor(50), 25)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 100.0,
+    "use_filter": true
+}

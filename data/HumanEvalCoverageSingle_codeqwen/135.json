@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/135",
+    "prompt": "\ndef can_arrange(arr):\n    \"\"\"Create a function which returns the largest index of an element which\n    is not greater than or equal to the element immediately preceding it. If\n    no such element exists then return -1. The given array will not contain\n    duplicate values.\n\n    Examples:\n    can_arrange([1,2,4,3,5]) = 3\n    can_arrange([1,2,3]) = -1\n    \"\"\"\n",
+    "canonical_solution": "    ind=-1\n    i=1\n    while i<len(arr):\n      if arr[i]<arr[i-1]:\n        ind=i\n      i+=1\n    return ind\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1,2,4,3,5])==3\n    assert candidate([1,2,4,5])==-1\n    assert candidate([1,4,2,5,6,7,8,9,10])==2\n    assert candidate([4,8,5,7,3])==4\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate([])==-1\n\n",
+    "entry_point": "can_arrange",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCanArrange(unittest.TestCase):\n    def test_can_arrange(self):\n        self.assertEqual(can_arrange([1, 2, 4, 3, 5]), 3)\n        self.assertEqual(can_arrange([1, 2, 3]), -1)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       8      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 8      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCanArrange(unittest.TestCase):\n    def test_can_arrange(self):\n        self.assertEqual(can_arrange([1, 2, 4, 3, 5]), 3)\n        self.assertEqual(can_arrange([1, 2, 3]), -1)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCanArrange(unittest.TestCase):\n    def test_can_arrange(self):\n        self.assertEqual(can_arrange([1, 2, 4, 3, 5]), 3)\n        self.assertEqual(can_arrange([1, 2, 3]), -1)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCanArrange(unittest.TestCase):\n    def test_can_arrange(self):\n        self.assertEqual(can_arrange([1, 2, 4, 3, 5]), 3)\n        self.assertEqual(can_arrange([1, 2, 3]), -1)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCanArrange(unittest.TestCase):\n    def test_can_arrange(self):\n        self.assertEqual(can_arrange([1, 2, 4, 3, 5]), 3)\n        self.assertEqual(can_arrange([1, 2, 3]), -1)\n\nif __name__ == \"__main__\":\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

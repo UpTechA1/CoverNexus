@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/41",
+    "prompt": "\n\ndef car_race_collision(n: int):\n    \"\"\"\n    Imagine a road that's a perfectly straight infinitely long line.\n    n cars are driving left to right;  simultaneously, a different set of n cars\n    are driving right to left.   The two sets of cars start out being very far from\n    each other.  All cars move in the same speed.  Two cars are said to collide\n    when a car that's moving left to right hits a car that's moving right to left.\n    However, the cars are infinitely sturdy and strong; as a result, they continue moving\n    in their trajectory as if they did not collide.\n\n    This function outputs the number of such collisions.\n    \"\"\"\n",
+    "canonical_solution": "    return n**2\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(2) == 4\n    assert candidate(3) == 9\n    assert candidate(4) == 16\n    assert candidate(8) == 64\n    assert candidate(10) == 100\n\n",
+    "entry_point": "car_race_collision",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import car_race_collision\n\nclass TestCarRaceCollision(unittest.TestCase):\n    def test_zero_cars(self):\n        self.assertEqual(car_race_collision(0), 0)\n\n    def test_one_car(self):\n        self.assertEqual(car_race_collision(1), 1)\n\n    def test_positive_integer(self):\n        self.assertEqual(car_race_collision(5), 25)\n\n    def test_large_number(self):\n        self.assertEqual(car_race_collision(1000), 1000000)\n\n    def test_negative_input(self):\n        self.assertEqual(car_race_collision(-3), 9)\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                            Stmts   Miss  Cover   Missing\n-----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_claude/codebase.py       2      0   100%\n-----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                               2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import car_race_collision\n\nclass TestCarRaceCollision(unittest.TestCase):\n    def test_zero_cars(self):\n        self.assertEqual(car_race_collision(0), 0)\n\n    def test_one_car(self):\n        self.assertEqual(car_race_collision(1), 1)\n\n    def test_positive_integer(self):\n        self.assertEqual(car_race_collision(5), 25)\n\n    def test_large_number(self):\n        self.assertEqual(car_race_collision(1000), 1000000)\n\n    def test_negative_input(self):\n        self.assertEqual(car_race_collision(-3), 9)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import car_race_collision\n\nclass TestCarRaceCollision(unittest.TestCase):\n    def test_zero_cars(self):\n        self.assertEqual(car_race_collision(0), 0)\n\n    def test_one_car(self):\n        self.assertEqual(car_race_collision(1), 1)\n\n    def test_positive_integer(self):\n        self.assertEqual(car_race_collision(5), 25)\n\n    def test_large_number(self):\n        self.assertEqual(car_race_collision(1000), 1000000)\n\n    def test_negative_input(self):\n        self.assertEqual(car_race_collision(-3), 9)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import car_race_collision\n\nclass TestCarRaceCollision(unittest.TestCase):\n    def test_zero_cars(self):\n        self.assertEqual(car_race_collision(0), 0)\n\n    def test_one_car(self):\n        self.assertEqual(car_race_collision(1), 1)\n\n    def test_positive_integer(self):\n        self.assertEqual(car_race_collision(5), 25)\n\n    def test_large_number(self):\n        self.assertEqual(car_race_collision(1000), 1000000)\n\n    def test_negative_input(self):\n        self.assertEqual(car_race_collision(-3), 9)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import car_race_collision\n\nclass TestCarRaceCollision(unittest.TestCase):\n    def test_zero_cars(self):\n        self.assertEqual(car_race_collision(0), 0)\n\n    def test_one_car(self):\n        self.assertEqual(car_race_collision(1), 1)\n\n    def test_positive_integer(self):\n        self.assertEqual(car_race_collision(5), 25)\n\n    def test_large_number(self):\n        self.assertEqual(car_race_collision(1000), 1000000)\n\n    def test_negative_input(self):\n        self.assertEqual(car_race_collision(-3), 9)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/27",
+    "prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+    "canonical_solution": "    return string.swapcase()\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate('Hello!') == 'hELLO!'\n    assert candidate('These violent delights have violent ends') == 'tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS'\n",
+    "entry_point": "flip_case",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFlipCase(unittest.TestCase):\n    def test_flip_case(self):\n        from codebase import flip_case\n\n        self.assertEqual(flip_case('Hello'), 'hELLO')\n        self.assertEqual(flip_case('hELLO'), 'Hello')\n        self.assertEqual(flip_case('HeLLo'), 'hEllO')\n        self.assertEqual(flip_case(''), '')\n        self.assertEqual(flip_case('1234567890'), '1234567890')\n        self.assertEqual(flip_case('!@#$%^&*()'), '!@#$%^&*()')\n        self.assertEqual(flip_case('aBcDeFgHiJkLmNoPqRsTuVwXyZ'), 'AbCdEfGhIjKlMnOpQrStUvWxYz')\n        self.assertEqual(flip_case('AbCdEfGhIjKlMnOpQrStUvWxYz'), 'aBcDeFgHiJkLmNoPqRsTuVwXyZ')\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       2      1    50%   8\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      1    50%\n",
+            "coverage": 50.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFlipCase(unittest.TestCase):\n    def test_flip_case(self):\n        from codebase import flip_case\n\n        self.assertEqual(flip_case('Hello'), 'hELLO')\n        self.assertEqual(flip_case('hELLO'), 'Hello')\n        self.assertEqual(flip_case('HeLLo'), 'hEllO')\n        self.assertEqual(flip_case(''), '')\n        self.assertEqual(flip_case('1234567890'), '1234567890')\n        self.assertEqual(flip_case('!@#$%^&*()'), '!@#$%^&*()')\n        self.assertEqual(flip_case('aBcDeFgHiJkLmNoPqRsTuVwXyZ'), 'AbCdEfGhIjKlMnOpQrStUvWxYz')\n        self.assertEqual(flip_case('AbCdEfGhIjKlMnOpQrStUvWxYz'), 'aBcDeFgHiJkLmNoPqRsTuVwXyZ')\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFlipCase(unittest.TestCase):\n    def test_flip_case(self):\n        from codebase import flip_case\n\n        self.assertEqual(flip_case('Hello'), 'hELLO')\n        self.assertEqual(flip_case('hELLO'), 'Hello')\n        self.assertEqual(flip_case('HeLLo'), 'hEllO')\n        self.assertEqual(flip_case(''), '')\n        self.assertEqual(flip_case('1234567890'), '1234567890')\n        self.assertEqual(flip_case('!@#$%^&*()'), '!@#$%^&*()')\n        self.assertEqual(flip_case('aBcDeFgHiJkLmNoPqRsTuVwXyZ'), 'AbCdEfGhIjKlMnOpQrStUvWxYz')\n        self.assertEqual(flip_case('AbCdEfGhIjKlMnOpQrStUvWxYz'), 'aBcDeFgHiJkLmNoPqRsTuVwXyZ')\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFlipCase(unittest.TestCase):\n    def test_flip_case(self):\n        from codebase import flip_case\n\n        self.assertEqual(flip_case('Hello'), 'hELLO')\n        self.assertEqual(flip_case('hELLO'), 'Hello')\n        self.assertEqual(flip_case('HeLLo'), 'hEllO')\n        self.assertEqual(flip_case(''), '')\n        self.assertEqual(flip_case('1234567890'), '1234567890')\n        self.assertEqual(flip_case('!@#$%^&*()'), '!@#$%^&*()')\n        self.assertEqual(flip_case('aBcDeFgHiJkLmNoPqRsTuVwXyZ'), 'AbCdEfGhIjKlMnOpQrStUvWxYz')\n        self.assertEqual(flip_case('AbCdEfGhIjKlMnOpQrStUvWxYz'), 'aBcDeFgHiJkLmNoPqRsTuVwXyZ')\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFlipCase(unittest.TestCase):\n    def test_flip_case(self):\n        from codebase import flip_case\n\n        self.assertEqual(flip_case('Hello'), 'hELLO')\n        self.assertEqual(flip_case('hELLO'), 'Hello')\n        self.assertEqual(flip_case('HeLLo'), 'hEllO')\n        self.assertEqual(flip_case(''), '')\n        self.assertEqual(flip_case('1234567890'), '1234567890')\n        self.assertEqual(flip_case('!@#$%^&*()'), '!@#$%^&*()')\n        self.assertEqual(flip_case('aBcDeFgHiJkLmNoPqRsTuVwXyZ'), 'AbCdEfGhIjKlMnOpQrStUvWxYz')\n        self.assertEqual(flip_case('AbCdEfGhIjKlMnOpQrStUvWxYz'), 'aBcDeFgHiJkLmNoPqRsTuVwXyZ')\n",
+    "exist_error": false,
+    "best_score": 50.0,
+    "first_score": 50.0,
+    "not_error_best_score": 50.0,
+    "exist_not_error": true,
+    "filtered_score": 50.0,
+    "use_filter": false
+}

@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/44",
+    "prompt": "\n\ndef change_base(x: int, base: int):\n    \"\"\"Change numerical base of input number x to base.\n    return string representation after the conversion.\n    base numbers are less than 10.\n    >>> change_base(8, 3)\n    '22'\n    >>> change_base(8, 2)\n    '1000'\n    >>> change_base(7, 2)\n    '111'\n    \"\"\"\n",
+    "canonical_solution": "    ret = \"\"\n    while x > 0:\n        ret = str(x % base) + ret\n        x //= base\n    return ret\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(8, 3) == \"22\"\n    assert candidate(9, 3) == \"100\"\n    assert candidate(234, 2) == \"11101010\"\n    assert candidate(16, 2) == \"10000\"\n    assert candidate(8, 2) == \"1000\"\n    assert candidate(7, 2) == \"111\"\n    for x in range(2, 8):\n        assert candidate(x, x + 1) == str(x)\n\n",
+    "entry_point": "change_base",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBaseChanger(unittest.TestCase):\n    def test_change_base_8_to_3(self):\n        self.assertEqual(change_base(8, 3), '22')\n\n    def test_change_base_8_to_2(self):\n        self.assertEqual(change_base(8, 2), '1000')\n\n    def test_change_base_7_to_2(self):\n        self.assertEqual(change_base(7, 2), '111')\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       6      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 6      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBaseChanger(unittest.TestCase):\n    def test_change_base_8_to_3(self):\n        self.assertEqual(change_base(8, 3), '22')\n\n    def test_change_base_8_to_2(self):\n        self.assertEqual(change_base(8, 2), '1000')\n\n    def test_change_base_7_to_2(self):\n        self.assertEqual(change_base(7, 2), '111')\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBaseChanger(unittest.TestCase):\n    def test_change_base_8_to_3(self):\n        self.assertEqual(change_base(8, 3), '22')\n\n    def test_change_base_8_to_2(self):\n        self.assertEqual(change_base(8, 2), '1000')\n\n    def test_change_base_7_to_2(self):\n        self.assertEqual(change_base(7, 2), '111')\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBaseChanger(unittest.TestCase):\n    def test_change_base_8_to_3(self):\n        self.assertEqual(change_base(8, 3), '22')\n\n    def test_change_base_8_to_2(self):\n        self.assertEqual(change_base(8, 2), '1000')\n\n    def test_change_base_7_to_2(self):\n        self.assertEqual(change_base(7, 2), '111')\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBaseChanger(unittest.TestCase):\n    def test_change_base_8_to_3(self):\n        self.assertEqual(change_base(8, 3), '22')\n\n    def test_change_base_8_to_2(self):\n        self.assertEqual(change_base(8, 2), '1000')\n\n    def test_change_base_7_to_2(self):\n        self.assertEqual(change_base(7, 2), '111')\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/4",
+    "prompt": "from typing import List\n\n\ndef mean_absolute_deviation(numbers: List[float]) -> float:\n    \"\"\" For a given list of input numbers, calculate Mean Absolute Deviation\n    around the mean of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a centerpoint (mean in this case):\n    MAD = average | x - x_mean |\n    >>> mean_absolute_deviation([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \"\"\"\n",
+    "canonical_solution": "    mean = sum(numbers) / len(numbers)\n    return sum(abs(x - mean) for x in numbers) / len(numbers)\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0]) - 2.0/3.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-6\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0, 5.0]) - 6.0/5.0) < 1e-6\n\n",
+    "entry_point": "mean_absolute_deviation",
+    "testbase": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+    "first_generated_test_script": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+    "not_error_best_generated_test_script": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+    "filtered_generated_test_script": "from method import mean_absolute_deviation\ndef check(candidate):\n    assert abs(candidate([1.0, 2.0, 3.0, 4.0]) - 1.0) < 1e-06\n\n\nif __name__ == '__main__':\n    check(mean_absolute_deviation)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

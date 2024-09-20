@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/30",
+    "prompt": "\n\ndef get_positive(l: list):\n    \"\"\"Return only positive numbers in the list.\n    >>> get_positive([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> get_positive([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n",
+    "canonical_solution": "    return [e for e in l if e > 0]\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([-1, -2, 4, 5, 6]) == [4, 5, 6]\n    assert candidate([5, 3, -5, 2, 3, 3, 9, 0, 123, 1, -10]) == [5, 3, 2, 3, 3, 9, 123, 1]\n    assert candidate([-1, -2]) == []\n    assert candidate([]) == []\n\n",
+    "entry_point": "get_positive",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "import unittest\nfrom codebase import get_positive\n\n\nclass TestGetPositive(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(get_positive([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(get_positive([-1, -2, -3, -4, -5]), [])\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(get_positive([-1, 2, -3, 4, -5]), [2, 4])\n\n    def test_zero_1(self):\n        self.assertEqual(get_positive([0]), [])\n\n    def test_empty_list_1(self):\n        self.assertEqual(get_positive([]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                   Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Untitled/test_coverage_multiagents/temp_test_codeqwen/codebase.py       2      0   100%\n--------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                      2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "import unittest\nfrom codebase import get_positive\n\n\nclass TestGetPositive(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(get_positive([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(get_positive([-1, -2, -3, -4, -5]), [])\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(get_positive([-1, 2, -3, 4, -5]), [2, 4])\n\n    def test_zero_1(self):\n        self.assertEqual(get_positive([0]), [])\n\n    def test_empty_list_1(self):\n        self.assertEqual(get_positive([]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "import unittest\nfrom codebase import get_positive\n\n\nclass TestGetPositive(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(get_positive([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(get_positive([-1, -2, -3, -4, -5]), [])\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(get_positive([-1, 2, -3, 4, -5]), [2, 4])\n\n    def test_zero_1(self):\n        self.assertEqual(get_positive([0]), [])\n\n    def test_empty_list_1(self):\n        self.assertEqual(get_positive([]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "import unittest\nfrom codebase import get_positive\n\n\nclass TestGetPositive(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(get_positive([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(get_positive([-1, -2, -3, -4, -5]), [])\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(get_positive([-1, 2, -3, 4, -5]), [2, 4])\n\n    def test_zero_1(self):\n        self.assertEqual(get_positive([0]), [])\n\n    def test_empty_list_1(self):\n        self.assertEqual(get_positive([]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "import unittest\nfrom codebase import get_positive\n\n\nclass TestGetPositive(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(get_positive([1, 2, 3, 4, 5]), [1, 2, 3, 4, 5])\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(get_positive([-1, -2, -3, -4, -5]), [])\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(get_positive([-1, 2, -3, 4, -5]), [2, 4])\n\n    def test_zero_1(self):\n        self.assertEqual(get_positive([0]), [])\n\n    def test_empty_list_1(self):\n        self.assertEqual(get_positive([]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

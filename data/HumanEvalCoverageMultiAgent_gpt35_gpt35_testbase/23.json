@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/23",
+    "prompt": "\n\ndef strlen(string: str) -> int:\n    \"\"\" Return length of given string\n    >>> strlen('')\n    0\n    >>> strlen('abc')\n    3\n    \"\"\"\n",
+    "canonical_solution": "    return len(string)\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == 0\n    assert candidate('x') == 1\n    assert candidate('asdasnakj') == 9\n",
+    "entry_point": "strlen",
+    "testbase": "from method import strlen\ndef strlen(string: str) ->int:\n    \"\"\" Return length of given string\n    >>> strlen('')\n    0\n    >>> strlen('abc')\n    3\n    \"\"\"\n    return len(string)\n\n\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 50.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "import unittest\nfrom codebase import strlen\n\n\nclass TestStrlen(unittest.TestCase):\n\n    def test_empty_string_1(self):\n        self.assertEqual(strlen(''), 0)\n\n    def test_non_empty_string_1(self):\n        self.assertEqual(strlen('abc'), 3)\n\n    def test_special_characters_1(self):\n        self.assertEqual(strlen('!@#$%^&*()'), 10)\n\n    def test_whitespace_1(self):\n        self.assertEqual(strlen('  '), 2)\n\n    def test_unicode_characters_1(self):\n        self.assertEqual(strlen('\ud83d\ude0a\ud83d\ude0e'), 2)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                         Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------------\n/home/vu.ho_ttsds/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt4/codebase.py       2      0   100%\n--------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                            2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "import unittest\nfrom codebase import strlen\n\n\nclass TestStrlen(unittest.TestCase):\n\n    def test_empty_string_1(self):\n        self.assertEqual(strlen(''), 0)\n\n    def test_non_empty_string_1(self):\n        self.assertEqual(strlen('abc'), 3)\n\n    def test_special_characters_1(self):\n        self.assertEqual(strlen('!@#$%^&*()'), 10)\n\n    def test_whitespace_1(self):\n        self.assertEqual(strlen('  '), 2)\n\n    def test_unicode_characters_1(self):\n        self.assertEqual(strlen('\ud83d\ude0a\ud83d\ude0e'), 2)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "import unittest\nfrom codebase import strlen\n\n\nclass TestStrlen(unittest.TestCase):\n\n    def test_empty_string_1(self):\n        self.assertEqual(strlen(''), 0)\n\n    def test_non_empty_string_1(self):\n        self.assertEqual(strlen('abc'), 3)\n\n    def test_special_characters_1(self):\n        self.assertEqual(strlen('!@#$%^&*()'), 10)\n\n    def test_whitespace_1(self):\n        self.assertEqual(strlen('  '), 2)\n\n    def test_unicode_characters_1(self):\n        self.assertEqual(strlen('\ud83d\ude0a\ud83d\ude0e'), 2)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "import unittest\nfrom codebase import strlen\n\n\nclass TestStrlen(unittest.TestCase):\n\n    def test_empty_string_1(self):\n        self.assertEqual(strlen(''), 0)\n\n    def test_non_empty_string_1(self):\n        self.assertEqual(strlen('abc'), 3)\n\n    def test_special_characters_1(self):\n        self.assertEqual(strlen('!@#$%^&*()'), 10)\n\n    def test_whitespace_1(self):\n        self.assertEqual(strlen('  '), 2)\n\n    def test_unicode_characters_1(self):\n        self.assertEqual(strlen('\ud83d\ude0a\ud83d\ude0e'), 2)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "import unittest\nfrom codebase import strlen\n\n\nclass TestStrlen(unittest.TestCase):\n\n    def test_empty_string_1(self):\n        self.assertEqual(strlen(''), 0)\n\n    def test_non_empty_string_1(self):\n        self.assertEqual(strlen('abc'), 3)\n\n    def test_special_characters_1(self):\n        self.assertEqual(strlen('!@#$%^&*()'), 10)\n\n    def test_whitespace_1(self):\n        self.assertEqual(strlen('  '), 2)\n\n    def test_unicode_characters_1(self):\n        self.assertEqual(strlen('\ud83d\ude0a\ud83d\ude0e'), 2)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

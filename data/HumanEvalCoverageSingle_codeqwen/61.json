@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/61",
+    "prompt": "\n\ndef correct_bracketing(brackets: str):\n    \"\"\" brackets is a string of \"(\" and \")\".\n    return True if every opening bracket has a corresponding closing bracket.\n\n    >>> correct_bracketing(\"(\")\n    False\n    >>> correct_bracketing(\"()\")\n    True\n    >>> correct_bracketing(\"(()())\")\n    True\n    >>> correct_bracketing(\")(()\")\n    False\n    \"\"\"\n",
+    "canonical_solution": "    depth = 0\n    for b in brackets:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(\"()\")\n    assert candidate(\"(()())\")\n    assert candidate(\"()()(()())()\")\n    assert candidate(\"()()((()()())())(()()(()))\")\n    assert not candidate(\"((()())))\")\n    assert not candidate(\")(()\")\n    assert not candidate(\"(\")\n    assert not candidate(\"((((\")\n    assert not candidate(\")\")\n    assert not candidate(\"(()\")\n    assert not candidate(\"()()(()())())(()\")\n    assert not candidate(\"()()(()())()))()\")\n\n",
+    "entry_point": "correct_bracketing",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBracketing(unittest.TestCase):\n    def test_correct_bracketing(self):\n        self.assertFalse(correct_bracketing(\"(\"))\n        self.assertTrue(correct_bracketing(\"()\"))\n        self.assertTrue(correct_bracketing(\"(()())\"))\n        self.assertFalse(correct_bracketing(\")(()\"))\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       9      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 9      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBracketing(unittest.TestCase):\n    def test_correct_bracketing(self):\n        self.assertFalse(correct_bracketing(\"(\"))\n        self.assertTrue(correct_bracketing(\"()\"))\n        self.assertTrue(correct_bracketing(\"(()())\"))\n        self.assertFalse(correct_bracketing(\")(()\"))\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBracketing(unittest.TestCase):\n    def test_correct_bracketing(self):\n        self.assertFalse(correct_bracketing(\"(\"))\n        self.assertTrue(correct_bracketing(\"()\"))\n        self.assertTrue(correct_bracketing(\"(()())\"))\n        self.assertFalse(correct_bracketing(\")(()\"))\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBracketing(unittest.TestCase):\n    def test_correct_bracketing(self):\n        self.assertFalse(correct_bracketing(\"(\"))\n        self.assertTrue(correct_bracketing(\"()\"))\n        self.assertTrue(correct_bracketing(\"(()())\"))\n        self.assertFalse(correct_bracketing(\")(()\"))\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestBracketing(unittest.TestCase):\n    def test_correct_bracketing(self):\n        self.assertFalse(correct_bracketing(\"(\"))\n        self.assertTrue(correct_bracketing(\"()\"))\n        self.assertTrue(correct_bracketing(\"(()())\"))\n        self.assertFalse(correct_bracketing(\")(()\"))\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

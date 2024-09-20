@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/42",
+    "prompt": "\n\ndef incr_list(l: list):\n    \"\"\"Return list with elements incremented by 1.\n    >>> incr_list([1, 2, 3])\n    [2, 3, 4]\n    >>> incr_list([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [6, 4, 6, 3, 4, 4, 10, 1, 124]\n    \"\"\"\n",
+    "canonical_solution": "    return [(e + 1) for e in l]\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([]) == []\n    assert candidate([3, 2, 1]) == [4, 3, 2]\n    assert candidate([5, 2, 5, 2, 3, 3, 9, 0, 123]) == [6, 3, 6, 3, 4, 4, 10, 1, 124]\n\n",
+    "entry_point": "incr_list",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport codebase\n",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      1    50%   10\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      1    50%\n",
+            "coverage": 50.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport codebase\n",
+    "first_generated_test_script": "from codebase import *\nimport codebase\n",
+    "not_error_best_generated_test_script": "from codebase import *\nimport codebase\n",
+    "filtered_generated_test_script": "from codebase import *\nimport codebase\n",
+    "exist_error": false,
+    "best_score": 50.0,
+    "first_score": 50.0,
+    "not_error_best_score": 50.0,
+    "exist_not_error": true,
+    "filtered_score": 50.0,
+    "use_filter": false
+}

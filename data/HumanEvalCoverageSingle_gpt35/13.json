@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/13",
+    "prompt": "\n\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n",
+    "canonical_solution": "    while b:\n        a, b = b, a % b\n    return a\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3, 7) == 1\n    assert candidate(10, 15) == 5\n    assert candidate(49, 14) == 7\n    assert candidate(144, 60) == 12\n",
+    "entry_point": "greatest_common_divisor",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import greatest_common_divisor\n\n\nclass TestGreatestCommonDivisor(unittest.TestCase):\n\n    def test_gcd_1_2(self):\n        self.assertEqual(result, 1)\n\n    def test_gcd_2(self):\n        self.assertEqual(result, 5)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "EE\n======================================================================\nERROR: test_gcd_1_2 (__main__.TestGreatestCommonDivisor.test_gcd_1_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 9, in test_gcd_1_2\n    self.assertEqual(result, 1)\n                     ^^^^^^\nNameError: name 'result' is not defined\n\n======================================================================\nERROR: test_gcd_2 (__main__.TestGreatestCommonDivisor.test_gcd_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 12, in test_gcd_2\n    self.assertEqual(result, 5)\n                     ^^^^^^\nNameError: name 'result' is not defined\n\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nFAILED (errors=2)\n\nName                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       4      3    25%   10-12\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              4      3    25%\n",
+            "coverage": 25.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import greatest_common_divisor\n\n\nclass TestGreatestCommonDivisor(unittest.TestCase):\n\n    def test_gcd_1_2(self):\n        self.assertEqual(result, 1)\n\n    def test_gcd_2(self):\n        self.assertEqual(result, 5)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import greatest_common_divisor\n\n\nclass TestGreatestCommonDivisor(unittest.TestCase):\n\n    def test_gcd_1_2(self):\n        self.assertEqual(result, 1)\n\n    def test_gcd_2(self):\n        self.assertEqual(result, 5)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "",
+    "exist_error": true,
+    "best_score": 25.0,
+    "first_score": 25.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 0,
+    "use_filter": false
+}

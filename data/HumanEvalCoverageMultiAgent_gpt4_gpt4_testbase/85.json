@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/85",
+    "prompt": "\ndef add(lst):\n    \"\"\"Given a non-empty list of integers lst. add the even elements that are at odd indices..\n\n\n    Examples:\n        add([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n",
+    "canonical_solution": "    return sum([lst[i] for i in range(1, len(lst), 2) if lst[i]%2 == 0])\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([4, 88]) == 88\n    assert candidate([4, 5, 6, 7, 2, 122]) == 122\n    assert candidate([4, 0, 6, 7]) == 0\n    assert candidate([4, 4, 6, 8]) == 12\n\n    # Check some edge cases that are easy to work out by hand.\n    \n",
+    "entry_point": "add",
+    "testbase": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+    "first_generated_test_script": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+    "not_error_best_generated_test_script": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+    "filtered_generated_test_script": "from method import add\ndef check(candidate):\n    assert candidate([4, 0, 6, 7]) == 0\n\n\nif __name__ == '__main__':\n    check(add)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

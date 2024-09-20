@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/2",
+    "prompt": "\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n",
+    "canonical_solution": "    return number % 1.0\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3.5) == 0.5\n    assert abs(candidate(1.33) - 0.33) < 1e-6\n    assert abs(candidate(123.456) - 0.456) < 1e-6\n",
+    "entry_point": "truncate_number",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestTruncateNumber(unittest.TestCase):\n    def test_truncate_number(self):\n        self.assertEqual(codebase.truncate_number(3.5), 0.5)\n        self.assertEqual(codebase.truncate_number(4.2), 0.2)\n        self.assertEqual(codebase.truncate_number(1.0), 0.0)\n        self.assertEqual(codebase.truncate_number(0.0), 0.0)\n        self.assertEqual(codebase.truncate_number(123456789.123456789), 0.123456789)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "F\n======================================================================\nFAIL: test_truncate_number (__main__.TestTruncateNumber.test_truncate_number)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/generated_test.py\", line 9, in test_truncate_number\n    self.assertEqual(codebase.truncate_number(4.2), 0.2)\nAssertionError: 0.20000000000000018 != 0.2\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       2      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestTruncateNumber(unittest.TestCase):\n    def test_truncate_number(self):\n        self.assertEqual(codebase.truncate_number(3.5), 0.5)\n        self.assertEqual(codebase.truncate_number(4.2), 0.2)\n        self.assertEqual(codebase.truncate_number(1.0), 0.0)\n        self.assertEqual(codebase.truncate_number(0.0), 0.0)\n        self.assertEqual(codebase.truncate_number(123456789.123456789), 0.123456789)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestTruncateNumber(unittest.TestCase):\n    def test_truncate_number(self):\n        self.assertEqual(codebase.truncate_number(3.5), 0.5)\n        self.assertEqual(codebase.truncate_number(4.2), 0.2)\n        self.assertEqual(codebase.truncate_number(1.0), 0.0)\n        self.assertEqual(codebase.truncate_number(0.0), 0.0)\n        self.assertEqual(codebase.truncate_number(123456789.123456789), 0.123456789)\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nimport codebase\n\n\nclass TestTruncateNumber(unittest.TestCase):\n\n    def test_truncate_number_1(self):\n        self.assertEqual(codebase.truncate_number(3.5), 0.5)\n\n    def test_truncate_number_3(self):\n        self.assertEqual(codebase.truncate_number(1.0), 0.0)\n\n    def test_truncate_number_4(self):\n        self.assertEqual(codebase.truncate_number(0.0), 0.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 100.0,
+    "use_filter": true
+}

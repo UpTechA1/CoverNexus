@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/41",
+    "prompt": "\n\ndef car_race_collision(n: int):\n    \"\"\"\n    Imagine a road that's a perfectly straight infinitely long line.\n    n cars are driving left to right;  simultaneously, a different set of n cars\n    are driving right to left.   The two sets of cars start out being very far from\n    each other.  All cars move in the same speed.  Two cars are said to collide\n    when a car that's moving left to right hits a car that's moving right to left.\n    However, the cars are infinitely sturdy and strong; as a result, they continue moving\n    in their trajectory as if they did not collide.\n\n    This function outputs the number of such collisions.\n    \"\"\"\n",
+    "canonical_solution": "    return n**2\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(2) == 4\n    assert candidate(3) == 9\n    assert candidate(4) == 16\n    assert candidate(8) == 64\n    assert candidate(10) == 100\n\n",
+    "entry_point": "car_race_collision",
+    "testbase": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+    "first_generated_test_script": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+    "not_error_best_generated_test_script": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+    "filtered_generated_test_script": "from method import car_race_collision\ndef check(candidate):\n    assert candidate(8) == 64\n\n\nif __name__ == '__main__':\n    check(car_race_collision)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

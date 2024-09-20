@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/62",
+    "prompt": "\n\ndef derivative(xs: list):\n    \"\"\" xs represent coefficients of a polynomial.\n    xs[0] + xs[1] * x + xs[2] * x^2 + ....\n     Return derivative of this polynomial in the same form.\n    >>> derivative([3, 1, 2, 4, 5])\n    [1, 4, 12, 20]\n    >>> derivative([1, 2, 3])\n    [2, 6]\n    \"\"\"\n",
+    "canonical_solution": "    return [(i * x) for i, x in enumerate(xs)][1:]\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([3, 1, 2, 4, 5]) == [1, 4, 12, 20]\n    assert candidate([1, 2, 3]) == [2, 6]\n    assert candidate([3, 2, 1]) == [2, 2]\n    assert candidate([3, 2, 1, 0, 4]) == [2, 2, 0, 16]\n    assert candidate([1]) == []\n\n",
+    "entry_point": "derivative",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestDerivative(unittest.TestCase):\n    def test_derivative(self):\n        self.assertEqual(derivative([3, 1, 2, 4, 5]), [1, 4, 12, 20])\n        self.assertEqual(derivative([1, 2, 3]), [2, 6])\n        self.assertEqual(derivative([0]), [0])  # Test case for constant function\n        self.assertEqual(derivative([1]), [0])  # Test case for x function\n        self.assertEqual(derivative([2, 3]), [3])  # Test case for x^2 function\n        self.assertEqual(derivative([1, 0, 2]), [0, 2])  # Test case for x^2+2x function\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "F\n======================================================================\nFAIL: test_derivative (__main__.TestDerivative.test_derivative)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/generated_test.py\", line 9, in test_derivative\n    self.assertEqual(derivative([0]), [0])  # Test case for constant function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [] != [0]\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n0\n\n- []\n+ [0]\n?  +\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       2      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestDerivative(unittest.TestCase):\n    def test_derivative(self):\n        self.assertEqual(derivative([3, 1, 2, 4, 5]), [1, 4, 12, 20])\n        self.assertEqual(derivative([1, 2, 3]), [2, 6])\n        self.assertEqual(derivative([0]), [0])  # Test case for constant function\n        self.assertEqual(derivative([1]), [0])  # Test case for x function\n        self.assertEqual(derivative([2, 3]), [3])  # Test case for x^2 function\n        self.assertEqual(derivative([1, 0, 2]), [0, 2])  # Test case for x^2+2x function\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestDerivative(unittest.TestCase):\n    def test_derivative(self):\n        self.assertEqual(derivative([3, 1, 2, 4, 5]), [1, 4, 12, 20])\n        self.assertEqual(derivative([1, 2, 3]), [2, 6])\n        self.assertEqual(derivative([0]), [0])  # Test case for constant function\n        self.assertEqual(derivative([1]), [0])  # Test case for x function\n        self.assertEqual(derivative([2, 3]), [3])  # Test case for x^2 function\n        self.assertEqual(derivative([1, 0, 2]), [0, 2])  # Test case for x^2+2x function\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\n\n\nclass TestDerivative(unittest.TestCase):\n\n    def test_derivative_1(self):\n        self.assertEqual(derivative([3, 1, 2, 4, 5]), [1, 4, 12, 20])\n\n    def test_derivative_2(self):\n        self.assertEqual(derivative([1, 2, 3]), [2, 6])\n\n    def test_derivative_5(self):\n        self.assertEqual(derivative([2, 3]), [3])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 100.0,
+    "use_filter": true
+}

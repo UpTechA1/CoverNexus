@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/90",
+    "prompt": "\ndef next_smallest(lst):\n    \"\"\"\n    You are given a list of integers.\n    Write a function next_smallest() that returns the 2nd smallest element of the list.\n    Return None if there is no such element.\n    \n    next_smallest([1, 2, 3, 4, 5]) == 2\n    next_smallest([5, 1, 4, 3, 2]) == 2\n    next_smallest([]) == None\n    next_smallest([1, 1]) == None\n    \"\"\"\n",
+    "canonical_solution": "    lst = sorted(set(lst))\n    return None if len(lst) < 2 else lst[1]\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1, 2, 3, 4, 5]) == 2\n    assert candidate([5, 1, 4, 3, 2]) == 2\n    assert candidate([]) == None\n    assert candidate([1, 1]) == None\n    assert candidate([1,1,1,1,0]) == 1\n    assert candidate([1, 0**0]) == None\n    assert candidate([-35, 34, 12, -45]) == -35\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n",
+    "entry_point": "next_smallest",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestNextSmallest(unittest.TestCase):\n    def test_next_smallest(self):\n        self.assertEqual(next_smallest([1, 2, 3, 4, 5]), 2)\n        self.assertEqual(next_smallest([5, 1, 4, 3, 2]), 2)\n        self.assertIsNone(next_smallest([]))\n        self.assertIsNone(next_smallest([1, 1]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       3      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 3      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestNextSmallest(unittest.TestCase):\n    def test_next_smallest(self):\n        self.assertEqual(next_smallest([1, 2, 3, 4, 5]), 2)\n        self.assertEqual(next_smallest([5, 1, 4, 3, 2]), 2)\n        self.assertIsNone(next_smallest([]))\n        self.assertIsNone(next_smallest([1, 1]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestNextSmallest(unittest.TestCase):\n    def test_next_smallest(self):\n        self.assertEqual(next_smallest([1, 2, 3, 4, 5]), 2)\n        self.assertEqual(next_smallest([5, 1, 4, 3, 2]), 2)\n        self.assertIsNone(next_smallest([]))\n        self.assertIsNone(next_smallest([1, 1]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestNextSmallest(unittest.TestCase):\n    def test_next_smallest(self):\n        self.assertEqual(next_smallest([1, 2, 3, 4, 5]), 2)\n        self.assertEqual(next_smallest([5, 1, 4, 3, 2]), 2)\n        self.assertIsNone(next_smallest([]))\n        self.assertIsNone(next_smallest([1, 1]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestNextSmallest(unittest.TestCase):\n    def test_next_smallest(self):\n        self.assertEqual(next_smallest([1, 2, 3, 4, 5]), 2)\n        self.assertEqual(next_smallest([5, 1, 4, 3, 2]), 2)\n        self.assertIsNone(next_smallest([]))\n        self.assertIsNone(next_smallest([1, 1]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

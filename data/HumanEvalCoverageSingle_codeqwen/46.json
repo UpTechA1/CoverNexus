@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/46",
+    "prompt": "\n\ndef fib4(n: int):\n    \"\"\"The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    fib4(0) -> 0\n    fib4(1) -> 0\n    fib4(2) -> 2\n    fib4(3) -> 0\n    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).\n    Please write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.\n    >>> fib4(5)\n    4\n    >>> fib4(6)\n    8\n    >>> fib4(7)\n    14\n    \"\"\"\n",
+    "canonical_solution": "    results = [0, 0, 2, 0]\n    if n < 4:\n        return results[n]\n\n    for _ in range(4, n + 1):\n        results.append(results[-1] + results[-2] + results[-3] + results[-4])\n        results.pop(0)\n\n    return results[-1]\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(5) == 4\n    assert candidate(8) == 28\n    assert candidate(10) == 104\n    assert candidate(12) == 386\n\n",
+    "entry_point": "fib4",
+    "coverage": 88.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFib4(unittest.TestCase):\n    def test_fib4(self):\n        self.assertEqual(fib4(5), 4)\n        self.assertEqual(fib4(6), 8)\n        self.assertEqual(fib4(7), 14)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       8      1    88%   20\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 8      1    88%\n",
+            "coverage": 88.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFib4(unittest.TestCase):\n    def test_fib4(self):\n        self.assertEqual(fib4(5), 4)\n        self.assertEqual(fib4(6), 8)\n        self.assertEqual(fib4(7), 14)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFib4(unittest.TestCase):\n    def test_fib4(self):\n        self.assertEqual(fib4(5), 4)\n        self.assertEqual(fib4(6), 8)\n        self.assertEqual(fib4(7), 14)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFib4(unittest.TestCase):\n    def test_fib4(self):\n        self.assertEqual(fib4(5), 4)\n        self.assertEqual(fib4(6), 8)\n        self.assertEqual(fib4(7), 14)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFib4(unittest.TestCase):\n    def test_fib4(self):\n        self.assertEqual(fib4(5), 4)\n        self.assertEqual(fib4(6), 8)\n        self.assertEqual(fib4(7), 14)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "exist_error": false,
+    "best_score": 88.0,
+    "first_score": 88.0,
+    "not_error_best_score": 88.0,
+    "exist_not_error": true,
+    "filtered_score": 88.0,
+    "use_filter": false
+}

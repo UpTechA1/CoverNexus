@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/24",
+    "prompt": "\n\ndef largest_divisor(n: int) -> int:\n    \"\"\" For a given number n, find the largest number that divides n evenly, smaller than n\n    >>> largest_divisor(15)\n    5\n    \"\"\"\n",
+    "canonical_solution": "    for i in reversed(range(n)):\n        if n % i == 0:\n            return i\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3) == 1\n    assert candidate(7) == 1\n    assert candidate(10) == 5\n    assert candidate(100) == 50\n    assert candidate(49) == 7\n",
+    "entry_point": "largest_divisor",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport codebase\n",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       4      3    25%   8-10\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              4      3    25%\n",
+            "coverage": 25.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport codebase\n",
+    "first_generated_test_script": "from codebase import *\nimport codebase\n",
+    "not_error_best_generated_test_script": "from codebase import *\nimport codebase\n",
+    "filtered_generated_test_script": "from codebase import *\nimport codebase\n",
+    "exist_error": false,
+    "best_score": 25.0,
+    "first_score": 25.0,
+    "not_error_best_score": 25.0,
+    "exist_not_error": true,
+    "filtered_score": 25.0,
+    "use_filter": false
+}

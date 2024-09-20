@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/34",
+    "prompt": "\n\ndef unique(l: list):\n    \"\"\"Return sorted unique elements in a list\n    >>> unique([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n",
+    "canonical_solution": "    return sorted(list(set(l)))\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([5, 3, 5, 2, 3, 3, 9, 0, 123]) == [0, 2, 3, 5, 9, 123]\n\n",
+    "entry_point": "unique",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestUniqueFunction(unittest.TestCase):\n    def test_unique(self):\n        self.assertEqual(unique([5, 3, 5, 2, 3, 3, 9, 0, 123]), [0, 2, 3, 5, 9, 123])\n        self.assertEqual(unique([1, 1, 1, 1]), [1])\n        self.assertEqual(unique([]), [])\n        self.assertEqual(unique([0, -1, 1]), [-1, 0, 1])\n        self.assertEqual(unique(['a', 'b', 'a']), ['a', 'b'])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       2      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestUniqueFunction(unittest.TestCase):\n    def test_unique(self):\n        self.assertEqual(unique([5, 3, 5, 2, 3, 3, 9, 0, 123]), [0, 2, 3, 5, 9, 123])\n        self.assertEqual(unique([1, 1, 1, 1]), [1])\n        self.assertEqual(unique([]), [])\n        self.assertEqual(unique([0, -1, 1]), [-1, 0, 1])\n        self.assertEqual(unique(['a', 'b', 'a']), ['a', 'b'])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestUniqueFunction(unittest.TestCase):\n    def test_unique(self):\n        self.assertEqual(unique([5, 3, 5, 2, 3, 3, 9, 0, 123]), [0, 2, 3, 5, 9, 123])\n        self.assertEqual(unique([1, 1, 1, 1]), [1])\n        self.assertEqual(unique([]), [])\n        self.assertEqual(unique([0, -1, 1]), [-1, 0, 1])\n        self.assertEqual(unique(['a', 'b', 'a']), ['a', 'b'])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestUniqueFunction(unittest.TestCase):\n    def test_unique(self):\n        self.assertEqual(unique([5, 3, 5, 2, 3, 3, 9, 0, 123]), [0, 2, 3, 5, 9, 123])\n        self.assertEqual(unique([1, 1, 1, 1]), [1])\n        self.assertEqual(unique([]), [])\n        self.assertEqual(unique([0, -1, 1]), [-1, 0, 1])\n        self.assertEqual(unique(['a', 'b', 'a']), ['a', 'b'])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestUniqueFunction(unittest.TestCase):\n    def test_unique(self):\n        self.assertEqual(unique([5, 3, 5, 2, 3, 3, 9, 0, 123]), [0, 2, 3, 5, 9, 123])\n        self.assertEqual(unique([1, 1, 1, 1]), [1])\n        self.assertEqual(unique([]), [])\n        self.assertEqual(unique([0, -1, 1]), [-1, 0, 1])\n        self.assertEqual(unique(['a', 'b', 'a']), ['a', 'b'])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

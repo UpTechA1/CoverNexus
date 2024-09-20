@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/47",
+    "prompt": "\n\ndef median(l: list):\n    \"\"\"Return median of elements in the list l.\n    >>> median([3, 1, 2, 4, 5])\n    3\n    >>> median([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n",
+    "canonical_solution": "    l = sorted(l)\n    if len(l) % 2 == 1:\n        return l[len(l) // 2]\n    else:\n        return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([3, 1, 2, 4, 5]) == 3\n    assert candidate([-10, 4, 6, 1000, 10, 20]) == 8.0\n    assert candidate([5]) == 5\n    assert candidate([6, 5]) == 5.5\n    assert candidate([8, 1, 3, 9, 9, 2, 7]) == 7 \n\n",
+    "entry_point": "median",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestMedian(unittest.TestCase):\n    def test_median_odd(self):\n        self.assertEqual(median([3]), 3)\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000, 10]), 15.0)\n\n    def test_median_even(self):\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000]), 5.0)\n\n    def test_median_empty(self):\n        self.assertIsNone(median([]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "E.F\n======================================================================\nERROR: test_median_empty (__main__.TestMedian.test_median_empty)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/generated_test.py\", line 16, in test_median_empty\n    self.assertIsNone(median([]))\n                      ^^^^^^^^^^\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py\", line 14, in median\n    return (l[len(l) // 2 - 1] + l[len(l) // 2]) / 2.0\n            ~^^^^^^^^^^^^^^^^^\nIndexError: list index out of range\n\n======================================================================\nFAIL: test_median_odd (__main__.TestMedian.test_median_odd)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/generated_test.py\", line 9, in test_median_odd\n    self.assertEqual(median([-10, 4, 6, 1000, 10]), 15.0)\nAssertionError: 6 != 15.0\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       5      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 5      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestMedian(unittest.TestCase):\n    def test_median_odd(self):\n        self.assertEqual(median([3]), 3)\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000, 10]), 15.0)\n\n    def test_median_even(self):\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000]), 5.0)\n\n    def test_median_empty(self):\n        self.assertIsNone(median([]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestMedian(unittest.TestCase):\n    def test_median_odd(self):\n        self.assertEqual(median([3]), 3)\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000, 10]), 15.0)\n\n    def test_median_even(self):\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n        self.assertEqual(median([-10, 4, 6, 1000]), 5.0)\n\n    def test_median_empty(self):\n        self.assertIsNone(median([]))\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\n\n\nclass TestMedian(unittest.TestCase):\n\n    def test_median_odd_1(self):\n        self.assertEqual(median([3]), 3)\n\n    def test_median_odd_2(self):\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n\n    def test_median_even_1(self):\n        self.assertEqual(median([1, 2, 4, 5]), 3)\n\n    def test_median_even_2(self):\n        self.assertEqual(median([-10, 4, 6, 1000]), 5.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 100.0,
+    "use_filter": true
+}

@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/65",
+    "prompt": "\ndef circular_shift(x, shift):\n    \"\"\"Circular shift the digits of the integer x, shift the digits right by shift\n    and return the result as a string.\n    If shift > number of digits, return digits reversed.\n    >>> circular_shift(12, 1)\n    \"21\"\n    >>> circular_shift(12, 2)\n    \"12\"\n    \"\"\"\n",
+    "canonical_solution": "    s = str(x)\n    if shift > len(s):\n        return s[::-1]\n    else:\n        return s[len(s) - shift:] + s[:len(s) - shift]\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(100, 2) == \"001\"\n    assert candidate(12, 2) == \"12\"\n    assert candidate(97, 8) == \"79\"\n    assert candidate(12, 1) == \"21\", \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(11, 101) == \"11\", \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+    "entry_point": "circular_shift",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCircularShift(unittest.TestCase):\n    def test_positive_shift(self):\n        self.assertEqual(circular_shift(12, 1), \"21\")\n        self.assertEqual(circular_shift(12, 2), \"12\")\n\n    def test_negative_shift(self):\n        self.assertEqual(circular_shift(12, -1), \"21\")\n        self.assertEqual(circular_shift(12, -2), \"12\")\n\n    def test_shift_more_than_length(self):\n        self.assertEqual(circular_shift(123, 3), \"321\")\n        self.assertEqual(circular_shift(123, 4), \"123\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "F.F\n======================================================================\nFAIL: test_negative_shift (__main__.TestCircularShift.test_negative_shift)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/generated_test.py\", line 11, in test_negative_shift\n    self.assertEqual(circular_shift(12, -1), \"21\")\nAssertionError: '12' != '21'\n- 12\n+ 21\n\n\n======================================================================\nFAIL: test_shift_more_than_length (__main__.TestCircularShift.test_shift_more_than_length)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/generated_test.py\", line 15, in test_shift_more_than_length\n    self.assertEqual(circular_shift(123, 3), \"321\")\nAssertionError: '123' != '321'\n- 123\n+ 321\n\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=2)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       5      1    80%   13\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 5      1    80%\n",
+            "coverage": 80.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCircularShift(unittest.TestCase):\n    def test_positive_shift(self):\n        self.assertEqual(circular_shift(12, 1), \"21\")\n        self.assertEqual(circular_shift(12, 2), \"12\")\n\n    def test_negative_shift(self):\n        self.assertEqual(circular_shift(12, -1), \"21\")\n        self.assertEqual(circular_shift(12, -2), \"12\")\n\n    def test_shift_more_than_length(self):\n        self.assertEqual(circular_shift(123, 3), \"321\")\n        self.assertEqual(circular_shift(123, 4), \"123\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestCircularShift(unittest.TestCase):\n    def test_positive_shift(self):\n        self.assertEqual(circular_shift(12, 1), \"21\")\n        self.assertEqual(circular_shift(12, 2), \"12\")\n\n    def test_negative_shift(self):\n        self.assertEqual(circular_shift(12, -1), \"21\")\n        self.assertEqual(circular_shift(12, -2), \"12\")\n\n    def test_shift_more_than_length(self):\n        self.assertEqual(circular_shift(123, 3), \"321\")\n        self.assertEqual(circular_shift(123, 4), \"123\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\n\n\nclass TestCircularShift(unittest.TestCase):\n\n    def test_positive_shift_1(self):\n        self.assertEqual(circular_shift(12, 1), '21')\n\n    def test_positive_shift_2(self):\n        self.assertEqual(circular_shift(12, 2), '12')\n\n    def test_negative_shift_2(self):\n        self.assertEqual(circular_shift(12, -2), '12')\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 80.0,
+    "first_score": 80.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 80.0,
+    "use_filter": true
+}

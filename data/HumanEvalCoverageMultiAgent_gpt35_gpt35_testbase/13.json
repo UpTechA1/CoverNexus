@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/13",
+    "prompt": "\n\ndef greatest_common_divisor(a: int, b: int) -> int:\n    \"\"\" Return a greatest common divisor of two integers a and b\n    >>> greatest_common_divisor(3, 5)\n    1\n    >>> greatest_common_divisor(25, 15)\n    5\n    \"\"\"\n",
+    "canonical_solution": "    while b:\n        a, b = b, a % b\n    return a\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(3, 7) == 1\n    assert candidate(10, 15) == 5\n    assert candidate(49, 14) == 7\n    assert candidate(144, 60) == 12\n",
+    "entry_point": "greatest_common_divisor",
+    "testbase": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+            "coverage": 100,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+    "first_generated_test_script": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+    "not_error_best_generated_test_script": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+    "filtered_generated_test_script": "from method import greatest_common_divisor\ndef check(candidate):\n    assert candidate(49, 14) == 7\n\n\nif __name__ == '__main__':\n    check(greatest_common_divisor)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

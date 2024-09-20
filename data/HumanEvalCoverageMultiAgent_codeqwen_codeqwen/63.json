@@ -1,0 +1,34 @@
+{
+    "task_id": "HumanEval/63",
+    "prompt": "\n\ndef fibfib(n: int):\n    \"\"\"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    fibfib(0) == 0\n    fibfib(1) == 0\n    fibfib(2) == 1\n    fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).\n    Please write a function to efficiently compute the n-th element of the fibfib number sequence.\n    >>> fibfib(1)\n    0\n    >>> fibfib(5)\n    4\n    >>> fibfib(8)\n    24\n    \"\"\"\n",
+    "canonical_solution": "    if n == 0:\n        return 0\n    if n == 1:\n        return 0\n    if n == 2:\n        return 1\n    return fibfib(n - 1) + fibfib(n - 2) + fibfib(n - 3)\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(2) == 1\n    assert candidate(1) == 0\n    assert candidate(5) == 4\n    assert candidate(8) == 24\n    assert candidate(10) == 81\n    assert candidate(12) == 274\n    assert candidate(14) == 927\n\n",
+    "entry_point": "fibfib",
+    "coverage": 100.0,
+    "num_iterations_used": 2,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFibfibFunction(unittest.TestCase):\n    def test_fibfib_base_cases(self):\n        self.assertEqual(fibfib(0), 0)\n        self.assertEqual(fibfib(1), 0)\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_general_cases(self):\n        self.assertEqual(fibfib(5), 4)\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_large_input(self):\n        # This test is skipped because it is expected to exceed the maximum recursion depth in Python\n        self.skipTest(\"Exceeds maximum recursion depth\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       8      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 8      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        },
+        "2": {
+            "generated_test_script": "from codebase import *\nimport unittest\n\nclass TestFibfib(unittest.TestCase):\n    def test_fibfib_1(self):\n        self.assertEqual(fibfib(1), 0)\n\n    def test_fibfib_5(self):\n        self.assertEqual(fibfib(5), 4)\n\n    def test_fibfib_8(self):\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_3(self):\n        self.assertEqual(fibfib(3), 1)\n\n    def test_fibfib_0(self):\n        self.assertEqual(fibfib(0), 0)\n\n    def test_fibfib_2(self):\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_10(self):\n        self.assertEqual(fibfib(10), 81)\n\n    def test_fibfib_15(self):\n        self.assertEqual(fibfib(15), 1104)\n\n    def test_fibfib_20(self):\n        self.assertEqual(fibfib(20), 35890)\n\n    def test_fibfib_25(self):\n        self.assertEqual(fibfib(25), 106494)\n\n    def test_fibfib_30(self):\n        self.assertEqual(fibfib(30), 7770823)\n\n    def test_fibfib_35(self):\n        self.assertEqual(fibfib(35), 12586269025)\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "The process took too long to complete and was terminated, please use small number for input or check the test script.",
+            "coverage": 0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFibfibFunction(unittest.TestCase):\n    def test_fibfib_base_cases(self):\n        self.assertEqual(fibfib(0), 0)\n        self.assertEqual(fibfib(1), 0)\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_general_cases(self):\n        self.assertEqual(fibfib(5), 4)\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_large_input(self):\n        # This test is skipped because it is expected to exceed the maximum recursion depth in Python\n        self.skipTest(\"Exceeds maximum recursion depth\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFibfibFunction(unittest.TestCase):\n    def test_fibfib_base_cases(self):\n        self.assertEqual(fibfib(0), 0)\n        self.assertEqual(fibfib(1), 0)\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_general_cases(self):\n        self.assertEqual(fibfib(5), 4)\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_large_input(self):\n        # This test is skipped because it is expected to exceed the maximum recursion depth in Python\n        self.skipTest(\"Exceeds maximum recursion depth\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFibfibFunction(unittest.TestCase):\n    def test_fibfib_base_cases(self):\n        self.assertEqual(fibfib(0), 0)\n        self.assertEqual(fibfib(1), 0)\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_general_cases(self):\n        self.assertEqual(fibfib(5), 4)\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_large_input(self):\n        # This test is skipped because it is expected to exceed the maximum recursion depth in Python\n        self.skipTest(\"Exceeds maximum recursion depth\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestFibfibFunction(unittest.TestCase):\n    def test_fibfib_base_cases(self):\n        self.assertEqual(fibfib(0), 0)\n        self.assertEqual(fibfib(1), 0)\n        self.assertEqual(fibfib(2), 1)\n\n    def test_fibfib_general_cases(self):\n        self.assertEqual(fibfib(5), 4)\n        self.assertEqual(fibfib(8), 24)\n\n    def test_fibfib_large_input(self):\n        # This test is skipped because it is expected to exceed the maximum recursion depth in Python\n        self.skipTest(\"Exceeds maximum recursion depth\")\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

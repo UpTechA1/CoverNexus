@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/12",
+    "prompt": "from typing import List, Optional\n\n\ndef longest(strings: List[str]) -> Optional[str]:\n    \"\"\" Out of list of strings, return the longest one. Return the first one in case of multiple\n    strings of the same length. Return None in case the input list is empty.\n    >>> longest([])\n\n    >>> longest(['a', 'b', 'c'])\n    'a'\n    >>> longest(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n",
+    "canonical_solution": "    if not strings:\n        return None\n\n    maxlen = max(len(x) for x in strings)\n    for s in strings:\n        if len(s) == maxlen:\n            return s\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == None\n    assert candidate(['x', 'y', 'z']) == 'x'\n    assert candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']) == 'zzzz'\n",
+    "entry_point": "longest",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import longest\n\nclass TestLongest(unittest.TestCase):\n\n    def test_empty_list(self):\n        self.assertIsNone(longest([]))\n\n    def test_single_element(self):\n        self.assertEqual(longest(['a']), 'a')\n\n    def test_multiple_elements_different_lengths(self):\n        self.assertEqual(longest(['a', 'bb', 'ccc']), 'ccc')\n\n    def test_multiple_elements_same_length(self):\n        self.assertEqual(longest(['a', 'b', 'c']), 'a')\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       8      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 8      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import longest\n\nclass TestLongest(unittest.TestCase):\n\n    def test_empty_list(self):\n        self.assertIsNone(longest([]))\n\n    def test_single_element(self):\n        self.assertEqual(longest(['a']), 'a')\n\n    def test_multiple_elements_different_lengths(self):\n        self.assertEqual(longest(['a', 'bb', 'ccc']), 'ccc')\n\n    def test_multiple_elements_same_length(self):\n        self.assertEqual(longest(['a', 'b', 'c']), 'a')\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import longest\n\nclass TestLongest(unittest.TestCase):\n\n    def test_empty_list(self):\n        self.assertIsNone(longest([]))\n\n    def test_single_element(self):\n        self.assertEqual(longest(['a']), 'a')\n\n    def test_multiple_elements_different_lengths(self):\n        self.assertEqual(longest(['a', 'bb', 'ccc']), 'ccc')\n\n    def test_multiple_elements_same_length(self):\n        self.assertEqual(longest(['a', 'b', 'c']), 'a')\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import longest\n\nclass TestLongest(unittest.TestCase):\n\n    def test_empty_list(self):\n        self.assertIsNone(longest([]))\n\n    def test_single_element(self):\n        self.assertEqual(longest(['a']), 'a')\n\n    def test_multiple_elements_different_lengths(self):\n        self.assertEqual(longest(['a', 'bb', 'ccc']), 'ccc')\n\n    def test_multiple_elements_same_length(self):\n        self.assertEqual(longest(['a', 'b', 'c']), 'a')\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import longest\n\nclass TestLongest(unittest.TestCase):\n\n    def test_empty_list(self):\n        self.assertIsNone(longest([]))\n\n    def test_single_element(self):\n        self.assertEqual(longest(['a']), 'a')\n\n    def test_multiple_elements_different_lengths(self):\n        self.assertEqual(longest(['a', 'bb', 'ccc']), 'ccc')\n\n    def test_multiple_elements_same_length(self):\n        self.assertEqual(longest(['a', 'b', 'c']), 'a')\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/55",
+    "prompt": "\n\ndef fib(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n",
+    "canonical_solution": "    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fib(n - 1) + fib(n - 2)\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(10) == 55\n    assert candidate(1) == 1\n    assert candidate(8) == 21\n    assert candidate(11) == 89\n    assert candidate(12) == 144\n\n",
+    "entry_point": "fib",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\n\nclass TestFibonacci(unittest.TestCase):\n\n    def test_fib_zero_1(self):\n        self.assertEqual(fib(0), 0)\n\n    def test_fib_one_1(self):\n        self.assertEqual(fib(1), 1)\n\n    def test_fib_two_1(self):\n        self.assertEqual(fib(2), 1)\n\n    def test_fib_ten_1(self):\n        self.assertEqual(fib(10), 55)\n\n    def test_fib_eight_1(self):\n        self.assertEqual(fib(8), 21)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                         Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------------\n/home/vu.ho_ttsds/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt4/codebase.py       6      0   100%\n--------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                            6      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\n\nclass TestFibonacci(unittest.TestCase):\n\n    def test_fib_zero_1(self):\n        self.assertEqual(fib(0), 0)\n\n    def test_fib_one_1(self):\n        self.assertEqual(fib(1), 1)\n\n    def test_fib_two_1(self):\n        self.assertEqual(fib(2), 1)\n\n    def test_fib_ten_1(self):\n        self.assertEqual(fib(10), 55)\n\n    def test_fib_eight_1(self):\n        self.assertEqual(fib(8), 21)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\n\nclass TestFibonacci(unittest.TestCase):\n\n    def test_fib_zero_1(self):\n        self.assertEqual(fib(0), 0)\n\n    def test_fib_one_1(self):\n        self.assertEqual(fib(1), 1)\n\n    def test_fib_two_1(self):\n        self.assertEqual(fib(2), 1)\n\n    def test_fib_ten_1(self):\n        self.assertEqual(fib(10), 55)\n\n    def test_fib_eight_1(self):\n        self.assertEqual(fib(8), 21)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\n\nclass TestFibonacci(unittest.TestCase):\n\n    def test_fib_zero_1(self):\n        self.assertEqual(fib(0), 0)\n\n    def test_fib_one_1(self):\n        self.assertEqual(fib(1), 1)\n\n    def test_fib_two_1(self):\n        self.assertEqual(fib(2), 1)\n\n    def test_fib_ten_1(self):\n        self.assertEqual(fib(10), 55)\n\n    def test_fib_eight_1(self):\n        self.assertEqual(fib(8), 21)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\n\nclass TestFibonacci(unittest.TestCase):\n\n    def test_fib_zero_1(self):\n        self.assertEqual(fib(0), 0)\n\n    def test_fib_one_1(self):\n        self.assertEqual(fib(1), 1)\n\n    def test_fib_two_1(self):\n        self.assertEqual(fib(2), 1)\n\n    def test_fib_ten_1(self):\n        self.assertEqual(fib(10), 55)\n\n    def test_fib_eight_1(self):\n        self.assertEqual(fib(8), 21)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

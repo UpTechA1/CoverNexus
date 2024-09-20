@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/25",
+    "prompt": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n",
+    "canonical_solution": "    import math\n    fact = []\n    i = 2\n    while i <= int(math.sqrt(n) + 1):\n        if n % i == 0:\n            fact.append(i)\n            n //= i\n        else:\n            i += 1\n\n    if n > 1:\n        fact.append(n)\n    return fact\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(2) == [2]\n    assert candidate(4) == [2, 2]\n    assert candidate(8) == [2, 2, 2]\n    assert candidate(3 * 19) == [3, 19]\n    assert candidate(3 * 19 * 3 * 19) == [3, 3, 19, 19]\n    assert candidate(3 * 19 * 3 * 19 * 3 * 19) == [3, 3, 3, 19, 19, 19]\n    assert candidate(3 * 19 * 19 * 19) == [3, 19, 19, 19]\n    assert candidate(3 * 2 * 3) == [2, 3, 3]\n",
+    "entry_point": "factorize",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import factorize\n\nclass TestFactorize(unittest.TestCase):\n    def test_factorize(self):\n        self.assertEqual(factorize(8), [2, 2, 2])\n        self.assertEqual(factorize(25), [5, 5])\n        self.assertEqual(factorize(70), [2, 5, 7])\n        self.assertEqual(factorize(1), [])\n        self.assertEqual(factorize(0), [])\n        self.assertEqual(factorize(-1), [])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "E\n======================================================================\nERROR: test_factorize (__main__.TestFactorize.test_factorize)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/generated_test.py\", line 13, in test_factorize\n    self.assertEqual(factorize(-1), [])\n                     ^^^^^^^^^^^^^\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py\", line 18, in factorize\n    while i <= int(math.sqrt(n) + 1):\n                   ^^^^^^^^^^^^\nValueError: math domain error\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n\nName                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py      13      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                13      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import factorize\n\nclass TestFactorize(unittest.TestCase):\n    def test_factorize(self):\n        self.assertEqual(factorize(8), [2, 2, 2])\n        self.assertEqual(factorize(25), [5, 5])\n        self.assertEqual(factorize(70), [2, 5, 7])\n        self.assertEqual(factorize(1), [])\n        self.assertEqual(factorize(0), [])\n        self.assertEqual(factorize(-1), [])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import factorize\n\nclass TestFactorize(unittest.TestCase):\n    def test_factorize(self):\n        self.assertEqual(factorize(8), [2, 2, 2])\n        self.assertEqual(factorize(25), [5, 5])\n        self.assertEqual(factorize(70), [2, 5, 7])\n        self.assertEqual(factorize(1), [])\n        self.assertEqual(factorize(0), [])\n        self.assertEqual(factorize(-1), [])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import factorize\n\n\nclass TestFactorize(unittest.TestCase):\n\n    def test_factorize_1(self):\n        self.assertEqual(factorize(8), [2, 2, 2])\n\n    def test_factorize_2(self):\n        self.assertEqual(factorize(25), [5, 5])\n\n    def test_factorize_3(self):\n        self.assertEqual(factorize(70), [2, 5, 7])\n\n    def test_factorize_4(self):\n        self.assertEqual(factorize(1), [])\n\n    def test_factorize_5(self):\n        self.assertEqual(factorize(0), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 100.0,
+    "use_filter": true
+}

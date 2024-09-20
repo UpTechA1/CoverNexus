@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/102",
+    "prompt": "\ndef choose_num(x, y):\n    \"\"\"This function takes two positive numbers x and y and returns the\n    biggest even integer number that is in the range [x, y] inclusive. If \n    there's no such number, then the function should return -1.\n\n    For example:\n    choose_num(12, 15) = 14\n    choose_num(13, 12) = -1\n    \"\"\"\n",
+    "canonical_solution": "    if x > y:\n        return -1\n    if y % 2 == 0:\n        return y\n    if x == y:\n        return -1\n    return y - 1\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(12, 15) == 14\n    assert candidate(13, 12) == -1\n    assert candidate(33, 12354) == 12354\n    assert candidate(5234, 5233) == -1\n    assert candidate(6, 29) == 28\n    assert candidate(27, 10) == -1\n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(7, 7) == -1\n    assert candidate(546, 546) == 546\n\n",
+    "entry_point": "choose_num",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import choose_num\n\n\nclass TestChooseNum(unittest.TestCase):\n\n    def test_choose_num_x_greater_than_y_1(self):\n        self.assertEqual(choose_num(15, 12), -1)\n\n    def test_choose_num_y_even_1(self):\n        self.assertEqual(choose_num(10, 14), 14)\n\n    def test_choose_num_x_equal_to_y_1(self):\n        self.assertEqual(choose_num(8, 8), -1)\n\n    def test_choose_num_no_even_number_1(self):\n        self.assertEqual(choose_num(3, 7), 6)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": ".F..\n======================================================================\nFAIL: test_choose_num_x_equal_to_y_1 (__main__.TestChooseNum.test_choose_num_x_equal_to_y_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 15, in test_choose_num_x_equal_to_y_1\n    self.assertEqual(choose_num(8, 8), -1)\nAssertionError: 8 != -1\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n\nName                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       8      1    88%   16\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              8      1    88%\n",
+            "coverage": 88.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import choose_num\n\n\nclass TestChooseNum(unittest.TestCase):\n\n    def test_choose_num_x_greater_than_y_1(self):\n        self.assertEqual(choose_num(15, 12), -1)\n\n    def test_choose_num_y_even_1(self):\n        self.assertEqual(choose_num(10, 14), 14)\n\n    def test_choose_num_x_equal_to_y_1(self):\n        self.assertEqual(choose_num(8, 8), -1)\n\n    def test_choose_num_no_even_number_1(self):\n        self.assertEqual(choose_num(3, 7), 6)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import choose_num\n\n\nclass TestChooseNum(unittest.TestCase):\n\n    def test_choose_num_x_greater_than_y_1(self):\n        self.assertEqual(choose_num(15, 12), -1)\n\n    def test_choose_num_y_even_1(self):\n        self.assertEqual(choose_num(10, 14), 14)\n\n    def test_choose_num_x_equal_to_y_1(self):\n        self.assertEqual(choose_num(8, 8), -1)\n\n    def test_choose_num_no_even_number_1(self):\n        self.assertEqual(choose_num(3, 7), 6)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import choose_num\n\n\nclass TestChooseNum(unittest.TestCase):\n\n    def test_choose_num_x_greater_than_y_1_1(self):\n        self.assertEqual(choose_num(15, 12), -1)\n\n    def test_choose_num_y_even_1_1(self):\n        self.assertEqual(choose_num(10, 14), 14)\n\n    def test_choose_num_no_even_number_1_1(self):\n        self.assertEqual(choose_num(3, 7), 6)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": true,
+    "best_score": 88.0,
+    "first_score": 88.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 88.0,
+    "use_filter": true
+}

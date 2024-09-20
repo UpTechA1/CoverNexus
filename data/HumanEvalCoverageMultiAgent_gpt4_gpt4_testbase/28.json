@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/28",
+    "prompt": "from typing import List\n\n\ndef concatenate(strings: List[str]) -> str:\n    \"\"\" Concatenate list of strings into a single string\n    >>> concatenate([])\n    ''\n    >>> concatenate(['a', 'b', 'c'])\n    'abc'\n    \"\"\"\n",
+    "canonical_solution": "    return ''.join(strings)\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == ''\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n    assert candidate(['x', 'y', 'z', 'w', 'k']) == 'xyzwk'\n",
+    "entry_point": "concatenate",
+    "testbase": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+    "first_generated_test_script": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+    "not_error_best_generated_test_script": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+    "filtered_generated_test_script": "from method import concatenate\ndef check(candidate):\n    assert candidate(['x', 'y', 'z']) == 'xyz'\n\n\nif __name__ == '__main__':\n    check(concatenate)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

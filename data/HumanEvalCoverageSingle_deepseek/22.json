@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/22",
+    "prompt": "from typing import List, Any\n\n\ndef filter_integers(values: List[Any]) -> List[int]:\n    \"\"\" Filter given list of any python values only for integers\n    >>> filter_integers(['a', 3.14, 5])\n    [5]\n    >>> filter_integers([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n",
+    "canonical_solution": "    return [x for x in values if isinstance(x, int)]\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == []\n    assert candidate([4, {}, [], 23.2, 9, 'adasd']) == [4, 9]\n    assert candidate([3, 'c', 3, 3, 'a', 'b']) == [3, 3, 3]\n",
+    "entry_point": "filter_integers",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import filter_integers\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers(self):\n        self.assertEqual(filter_integers(['a', 3.14, 5]), [5])\n        self.assertEqual(filter_integers([1, 2, 3, 'abc', {}, []]), [1, 2, 3])\n        self.assertEqual(filter_integers(['abc', 'def', 'ghi']), [])\n        self.assertEqual(filter_integers([1]), [1])\n        self.assertEqual(filter_integers([]), [])\n        self.assertEqual(filter_integers([1, 'a', 3.14, 'abc', {}, []]), [1])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_deepseek/codebase.py       3      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 3      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import filter_integers\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers(self):\n        self.assertEqual(filter_integers(['a', 3.14, 5]), [5])\n        self.assertEqual(filter_integers([1, 2, 3, 'abc', {}, []]), [1, 2, 3])\n        self.assertEqual(filter_integers(['abc', 'def', 'ghi']), [])\n        self.assertEqual(filter_integers([1]), [1])\n        self.assertEqual(filter_integers([]), [])\n        self.assertEqual(filter_integers([1, 'a', 3.14, 'abc', {}, []]), [1])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import filter_integers\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers(self):\n        self.assertEqual(filter_integers(['a', 3.14, 5]), [5])\n        self.assertEqual(filter_integers([1, 2, 3, 'abc', {}, []]), [1, 2, 3])\n        self.assertEqual(filter_integers(['abc', 'def', 'ghi']), [])\n        self.assertEqual(filter_integers([1]), [1])\n        self.assertEqual(filter_integers([]), [])\n        self.assertEqual(filter_integers([1, 'a', 3.14, 'abc', {}, []]), [1])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import filter_integers\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers(self):\n        self.assertEqual(filter_integers(['a', 3.14, 5]), [5])\n        self.assertEqual(filter_integers([1, 2, 3, 'abc', {}, []]), [1, 2, 3])\n        self.assertEqual(filter_integers(['abc', 'def', 'ghi']), [])\n        self.assertEqual(filter_integers([1]), [1])\n        self.assertEqual(filter_integers([]), [])\n        self.assertEqual(filter_integers([1, 'a', 3.14, 'abc', {}, []]), [1])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import filter_integers\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers(self):\n        self.assertEqual(filter_integers(['a', 3.14, 5]), [5])\n        self.assertEqual(filter_integers([1, 2, 3, 'abc', {}, []]), [1, 2, 3])\n        self.assertEqual(filter_integers(['abc', 'def', 'ghi']), [])\n        self.assertEqual(filter_integers([1]), [1])\n        self.assertEqual(filter_integers([]), [])\n        self.assertEqual(filter_integers([1, 'a', 3.14, 'abc', {}, []]), [1])\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

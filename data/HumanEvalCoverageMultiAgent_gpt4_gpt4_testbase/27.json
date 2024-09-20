@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/27",
+    "prompt": "\n\ndef flip_case(string: str) -> str:\n    \"\"\" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.\n    >>> flip_case('Hello')\n    'hELLO'\n    \"\"\"\n",
+    "canonical_solution": "    return string.swapcase()\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == ''\n    assert candidate('Hello!') == 'hELLO!'\n    assert candidate('These violent delights have violent ends') == 'tHESE VIOLENT DELIGHTS HAVE VIOLENT ENDS'\n",
+    "entry_point": "flip_case",
+    "testbase": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+    "first_generated_test_script": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+    "not_error_best_generated_test_script": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+    "filtered_generated_test_script": "from method import flip_case\ndef check(candidate):\n    assert candidate('Hello!') == 'hELLO!'\n\n\nif __name__ == '__main__':\n    check(flip_case)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

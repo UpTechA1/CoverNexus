@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/152",
+    "prompt": "\ndef compare(game,guess):\n    \"\"\"I think we all remember that feeling when the result of some long-awaited\n    event is finally known. The feelings and thoughts you have at that moment are\n    definitely worth noting down and comparing.\n    Your task is to determine if a person correctly guessed the results of a number of matches.\n    You are given two arrays of scores and guesses of equal length, where each index shows a match. \n    Return an array of the same length denoting how far off each guess was. If they have guessed correctly,\n    the value is 0, and if not, the value is the absolute difference between the guess and the score.\n    \n    \n    example:\n\n    compare([1,2,3,4,5,1],[1,2,3,4,2,-2]) -> [0,0,0,0,3,3]\n    compare([0,5,0,0,0,4],[4,1,1,0,0,-2]) -> [4,4,1,0,0,6]\n    \"\"\"\n",
+    "canonical_solution": "    return [abs(x-y) for x,y in zip(game,guess)]\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([1,2,3,4,5,1],[1,2,3,4,2,-2])==[0,0,0,0,3,3], \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate([0,0,0,0,0,0],[0,0,0,0,0,0])==[0,0,0,0,0,0], \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate([1,2,3],[-1,-2,-3])==[2,4,6], \"This prints if this assert fails 1 (good for debugging!)\"\n    assert candidate([1,2,3,5],[-1,2,3,4])==[2,0,0,1], \"This prints if this assert fails 1 (good for debugging!)\"\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True, \"This prints if this assert fails 2 (also good for debugging!)\"\n\n",
+    "entry_point": "compare",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestCodebase(unittest.TestCase):\n    def test_compare(self):\n        self.assertEqual(codebase.compare([1,2,3,4,5,1],[1,2,3,4,2,-2]), [0,0,0,0,3,3])\n        self.assertEqual(codebase.compare([0,5,0,0,0,4],[4,1,1,0,0,-2]), [4,4,1,0,0,6])\n\nif __name__ == \"__main__\":\n    unittest.main()\n    import coverage\n    cov = coverage.Coverage()\n    cov.start()\n    import test_codebase\n    cov.stop()\n    cov.report()\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       2      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestCodebase(unittest.TestCase):\n    def test_compare(self):\n        self.assertEqual(codebase.compare([1,2,3,4,5,1],[1,2,3,4,2,-2]), [0,0,0,0,3,3])\n        self.assertEqual(codebase.compare([0,5,0,0,0,4],[4,1,1,0,0,-2]), [4,4,1,0,0,6])\n\nif __name__ == \"__main__\":\n    unittest.main()\n    import coverage\n    cov = coverage.Coverage()\n    cov.start()\n    import test_codebase\n    cov.stop()\n    cov.report()\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestCodebase(unittest.TestCase):\n    def test_compare(self):\n        self.assertEqual(codebase.compare([1,2,3,4,5,1],[1,2,3,4,2,-2]), [0,0,0,0,3,3])\n        self.assertEqual(codebase.compare([0,5,0,0,0,4],[4,1,1,0,0,-2]), [4,4,1,0,0,6])\n\nif __name__ == \"__main__\":\n    unittest.main()\n    import coverage\n    cov = coverage.Coverage()\n    cov.start()\n    import test_codebase\n    cov.stop()\n    cov.report()\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestCodebase(unittest.TestCase):\n    def test_compare(self):\n        self.assertEqual(codebase.compare([1,2,3,4,5,1],[1,2,3,4,2,-2]), [0,0,0,0,3,3])\n        self.assertEqual(codebase.compare([0,5,0,0,0,4],[4,1,1,0,0,-2]), [4,4,1,0,0,6])\n\nif __name__ == \"__main__\":\n    unittest.main()\n    import coverage\n    cov = coverage.Coverage()\n    cov.start()\n    import test_codebase\n    cov.stop()\n    cov.report()\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\nimport codebase\n\nclass TestCodebase(unittest.TestCase):\n    def test_compare(self):\n        self.assertEqual(codebase.compare([1,2,3,4,5,1],[1,2,3,4,2,-2]), [0,0,0,0,3,3])\n        self.assertEqual(codebase.compare([0,5,0,0,0,4],[4,1,1,0,0,-2]), [4,4,1,0,0,6])\n\nif __name__ == \"__main__\":\n    unittest.main()\n    import coverage\n    cov = coverage.Coverage()\n    cov.start()\n    import test_codebase\n    cov.stop()\n    cov.report()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

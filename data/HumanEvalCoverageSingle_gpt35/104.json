@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/104",
+    "prompt": "\ndef unique_digits(x):\n    \"\"\"Given a list of positive integers x. return a sorted list of all \n    elements that hasn't any even digit.\n\n    Note: Returned list should be sorted in increasing order.\n    \n    For example:\n    >>> unique_digits([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> unique_digits([152, 323, 1422, 10])\n    []\n    \"\"\"\n",
+    "canonical_solution": "    odd_digit_elements = []\n    for i in x:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate([15, 33, 1422, 1]) == [1, 15, 33]\n    assert candidate([152, 323, 1422, 10]) == []\n    assert candidate([12345, 2033, 111, 151]) == [111, 151]\n    assert candidate([135, 103, 31]) == [31, 135]\n\n    # Check some edge cases that are easy to work out by hand.\n    assert True\n\n",
+    "entry_point": "unique_digits",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import unique_digits\n\n\nclass TestUniqueDigits(unittest.TestCase):\n\n    def test_unique_digits_1(self):\n        self.assertEqual(unique_digits([15, 33, 1422, 1]), [1, 15, 33])\n\n    def test_unique_digits_2(self):\n        self.assertEqual(unique_digits([152, 323, 1422, 10]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       6      0   100%\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              6      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import unique_digits\n\n\nclass TestUniqueDigits(unittest.TestCase):\n\n    def test_unique_digits_1(self):\n        self.assertEqual(unique_digits([15, 33, 1422, 1]), [1, 15, 33])\n\n    def test_unique_digits_2(self):\n        self.assertEqual(unique_digits([152, 323, 1422, 10]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import unique_digits\n\n\nclass TestUniqueDigits(unittest.TestCase):\n\n    def test_unique_digits_1(self):\n        self.assertEqual(unique_digits([15, 33, 1422, 1]), [1, 15, 33])\n\n    def test_unique_digits_2(self):\n        self.assertEqual(unique_digits([152, 323, 1422, 10]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import unique_digits\n\n\nclass TestUniqueDigits(unittest.TestCase):\n\n    def test_unique_digits_1(self):\n        self.assertEqual(unique_digits([15, 33, 1422, 1]), [1, 15, 33])\n\n    def test_unique_digits_2(self):\n        self.assertEqual(unique_digits([152, 323, 1422, 10]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import unique_digits\n\n\nclass TestUniqueDigits(unittest.TestCase):\n\n    def test_unique_digits_1(self):\n        self.assertEqual(unique_digits([15, 33, 1422, 1]), [1, 15, 33])\n\n    def test_unique_digits_2(self):\n        self.assertEqual(unique_digits([152, 323, 1422, 10]), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

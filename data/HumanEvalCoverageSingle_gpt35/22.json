@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/22",
+    "prompt": "from typing import List, Any\n\n\ndef filter_integers(values: List[Any]) -> List[int]:\n    \"\"\" Filter given list of any python values only for integers\n    >>> filter_integers(['a', 3.14, 5])\n    [5]\n    >>> filter_integers([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n",
+    "canonical_solution": "    return [x for x in values if isinstance(x, int)]\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate([]) == []\n    assert candidate([4, {}, [], 23.2, 9, 'adasd']) == [4, 9]\n    assert candidate([3, 'c', 3, 3, 'a', 'b']) == [3, 3, 3]\n",
+    "entry_point": "filter_integers",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import filter_integers\n\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers_with_integers_2(self):\n        self.assertEqual(filter_integers(values), [1, 2, 3, 4])\n\n    def test_filter_integers_with_mixed_values_2(self):\n        self.assertEqual(filter_integers(values), [5, 6])\n\n    def test_filter_integers_with_empty_list_2(self):\n        self.assertEqual(filter_integers(values), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "EEE\n======================================================================\nERROR: test_filter_integers_with_empty_list_2 (__main__.TestFilterIntegers.test_filter_integers_with_empty_list_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 15, in test_filter_integers_with_empty_list_2\n    self.assertEqual(filter_integers(values), [])\n                                     ^^^^^^\nNameError: name 'values' is not defined\n\n======================================================================\nERROR: test_filter_integers_with_integers_2 (__main__.TestFilterIntegers.test_filter_integers_with_integers_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 9, in test_filter_integers_with_integers_2\n    self.assertEqual(filter_integers(values), [1, 2, 3, 4])\n                                     ^^^^^^\nNameError: name 'values' is not defined\n\n======================================================================\nERROR: test_filter_integers_with_mixed_values_2 (__main__.TestFilterIntegers.test_filter_integers_with_mixed_values_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/generated_test.py\", line 12, in test_filter_integers_with_mixed_values_2\n    self.assertEqual(filter_integers(values), [5, 6])\n                                     ^^^^^^\nNameError: name 'values' is not defined\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (errors=3)\n\nName                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       3      1    67%   11\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              3      1    67%\n",
+            "coverage": 67.0,
+            "exist_error": true
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import filter_integers\n\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers_with_integers_2(self):\n        self.assertEqual(filter_integers(values), [1, 2, 3, 4])\n\n    def test_filter_integers_with_mixed_values_2(self):\n        self.assertEqual(filter_integers(values), [5, 6])\n\n    def test_filter_integers_with_empty_list_2(self):\n        self.assertEqual(filter_integers(values), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import filter_integers\n\n\nclass TestFilterIntegers(unittest.TestCase):\n\n    def test_filter_integers_with_integers_2(self):\n        self.assertEqual(filter_integers(values), [1, 2, 3, 4])\n\n    def test_filter_integers_with_mixed_values_2(self):\n        self.assertEqual(filter_integers(values), [5, 6])\n\n    def test_filter_integers_with_empty_list_2(self):\n        self.assertEqual(filter_integers(values), [])\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "",
+    "filtered_generated_test_script": "",
+    "exist_error": true,
+    "best_score": 67.0,
+    "first_score": 67.0,
+    "not_error_best_score": 0,
+    "exist_not_error": false,
+    "filtered_score": 0,
+    "use_filter": false
+}

@@ -1,0 +1,52 @@
+{
+    "task_id": "HumanEval/15",
+    "prompt": "\n\ndef string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\n    >>> string_sequence(0)\n    '0'\n    >>> string_sequence(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n",
+    "canonical_solution": "    return ' '.join([str(x) for x in range(n + 1)])\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate(0) == '0'\n    assert candidate(3) == '0 1 2 3'\n    assert candidate(10) == '0 1 2 3 4 5 6 7 8 9 10'\n",
+    "entry_point": "string_sequence",
+    "coverage": 100.0,
+    "num_iterations_used": 5,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n\n    def test_string_sequence_zero(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_positive(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\n    def test_string_sequence_negative(self):\n        self.assertEqual(string_sequence(-1), '')\n\n    def test_string_sequence_large(self):\n        self.assertEqual(string_sequence(100), ' '.join([str(x) for x in range(101)])\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      2     0%   3-10\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      2     0%\n",
+            "coverage": 0.0,
+            "exist_error": false
+        },
+        "2": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n\n    def test_string_sequence(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_multiple_numbers(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      0   100%\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        },
+        "3": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n\n    def test_string_sequence_zero(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_positive(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\n    def test_string_sequence_negative(self):\n        self.assertEqual(string_sequence(-1), '')\n\n    def test_string_sequence_large(self):\n        self.assertEqual(string_sequence(100), ' '.join([str(x) for x in range(101)]))\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      0   100%\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        },
+        "4": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n\n    def test_string_sequence_zero(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_positive(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\n    def test_string_sequence_negative(self):\n        self.assertEqual(string_sequence(-1), '')\n\n    def test_string_sequence_large(self):\n        self.assertEqual(string_sequence(1000), ' '.join([str(x) for x in range(1001)])\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      2     0%   3-10\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      2     0%\n",
+            "coverage": 0.0,
+            "exist_error": false
+        },
+        "5": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n    \n    def test_string_sequence_0(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_5(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      0   100%\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n    \n    def test_string_sequence_0(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_5(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\nif __name__ == '__main__':\n    unittest.main()",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n\n    def test_string_sequence_zero(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_positive(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\n    def test_string_sequence_negative(self):\n        self.assertEqual(string_sequence(-1), '')\n\n    def test_string_sequence_large(self):\n        self.assertEqual(string_sequence(100), ' '.join([str(x) for x in range(101)])\n\nif __name__ == '__main__':\n    unittest.main()",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n    \n    def test_string_sequence_0(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_5(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\nif __name__ == '__main__':\n    unittest.main()",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import string_sequence\n\nclass TestStringSequence(unittest.TestCase):\n    \n    def test_string_sequence_0(self):\n        self.assertEqual(string_sequence(0), '0')\n\n    def test_string_sequence_5(self):\n        self.assertEqual(string_sequence(5), '0 1 2 3 4 5')\n\nif __name__ == '__main__':\n    unittest.main()",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 0.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

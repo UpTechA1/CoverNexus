@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/45",
+    "prompt": "\n\ndef triangle_area(a, h):\n    \"\"\"Given length of a side and high return area for a triangle.\n    >>> triangle_area(5, 3)\n    7.5\n    \"\"\"\n",
+    "canonical_solution": "    return a * h / 2.0\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(5, 3) == 7.5\n    assert candidate(2, 2) == 2.0\n    assert candidate(10, 8) == 40.0\n\n",
+    "entry_point": "triangle_area",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "import unittest\nfrom codebase import triangle_area\n\n\nclass TestTriangleArea(unittest.TestCase):\n\n    def test_positive_values_1(self):\n        self.assertEqual(triangle_area(5, 3), 7.5)\n\n    def test_zero_values_1(self):\n        self.assertEqual(triangle_area(0, 0), 0.0)\n\n    def test_large_values_1(self):\n        self.assertEqual(triangle_area(1000000, 1000000), 500000000000.0)\n\n    def test_float_values_1(self):\n        self.assertAlmostEqual(triangle_area(2.5, 3.7), 4.625, places=7)\n\n    def test_negative_values_1(self):\n        self.assertEqual(triangle_area(-4, 6), -12.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                   Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Untitled/test_coverage_multiagents/temp_test_codeqwen/codebase.py       2      0   100%\n--------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                      2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "import unittest\nfrom codebase import triangle_area\n\n\nclass TestTriangleArea(unittest.TestCase):\n\n    def test_positive_values_1(self):\n        self.assertEqual(triangle_area(5, 3), 7.5)\n\n    def test_zero_values_1(self):\n        self.assertEqual(triangle_area(0, 0), 0.0)\n\n    def test_large_values_1(self):\n        self.assertEqual(triangle_area(1000000, 1000000), 500000000000.0)\n\n    def test_float_values_1(self):\n        self.assertAlmostEqual(triangle_area(2.5, 3.7), 4.625, places=7)\n\n    def test_negative_values_1(self):\n        self.assertEqual(triangle_area(-4, 6), -12.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "import unittest\nfrom codebase import triangle_area\n\n\nclass TestTriangleArea(unittest.TestCase):\n\n    def test_positive_values_1(self):\n        self.assertEqual(triangle_area(5, 3), 7.5)\n\n    def test_zero_values_1(self):\n        self.assertEqual(triangle_area(0, 0), 0.0)\n\n    def test_large_values_1(self):\n        self.assertEqual(triangle_area(1000000, 1000000), 500000000000.0)\n\n    def test_float_values_1(self):\n        self.assertAlmostEqual(triangle_area(2.5, 3.7), 4.625, places=7)\n\n    def test_negative_values_1(self):\n        self.assertEqual(triangle_area(-4, 6), -12.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "import unittest\nfrom codebase import triangle_area\n\n\nclass TestTriangleArea(unittest.TestCase):\n\n    def test_positive_values_1(self):\n        self.assertEqual(triangle_area(5, 3), 7.5)\n\n    def test_zero_values_1(self):\n        self.assertEqual(triangle_area(0, 0), 0.0)\n\n    def test_large_values_1(self):\n        self.assertEqual(triangle_area(1000000, 1000000), 500000000000.0)\n\n    def test_float_values_1(self):\n        self.assertAlmostEqual(triangle_area(2.5, 3.7), 4.625, places=7)\n\n    def test_negative_values_1(self):\n        self.assertEqual(triangle_area(-4, 6), -12.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "import unittest\nfrom codebase import triangle_area\n\n\nclass TestTriangleArea(unittest.TestCase):\n\n    def test_positive_values_1(self):\n        self.assertEqual(triangle_area(5, 3), 7.5)\n\n    def test_zero_values_1(self):\n        self.assertEqual(triangle_area(0, 0), 0.0)\n\n    def test_large_values_1(self):\n        self.assertEqual(triangle_area(1000000, 1000000), 500000000000.0)\n\n    def test_float_values_1(self):\n        self.assertAlmostEqual(triangle_area(2.5, 3.7), 4.625, places=7)\n\n    def test_negative_values_1(self):\n        self.assertEqual(triangle_area(-4, 6), -12.0)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

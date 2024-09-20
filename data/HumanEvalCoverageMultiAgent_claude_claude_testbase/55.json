@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/55",
+    "prompt": "\n\ndef fib(n: int):\n    \"\"\"Return n-th Fibonacci number.\n    >>> fib(10)\n    55\n    >>> fib(1)\n    1\n    >>> fib(8)\n    21\n    \"\"\"\n",
+    "canonical_solution": "    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fib(n - 1) + fib(n - 2)\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(10) == 55\n    assert candidate(1) == 1\n    assert candidate(8) == 21\n    assert candidate(11) == 89\n    assert candidate(12) == 144\n\n",
+    "entry_point": "fib",
+    "testbase": "from method import fib\ndef check(candidate):\n    assert candidate(1) == 1\n\n\nif __name__ == '__main__':\n    check(fib)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 67.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\nclass TestFibonacci(unittest.TestCase):\n    def test_fib(self):\n        test_cases = [\n            (0, 0),\n            (1, 1),\n            (2, 1),\n            (3, 2),\n            (5, 5),\n            (10, 55),\n        ]\n        for n, expected in test_cases:\n            with self.subTest(n=n):\n                self.assertEqual(fib(n), expected)\n\n    def test_negative_input(self):\n        with self.assertRaises(RecursionError):\n            fib(-1)\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                            Stmts   Miss  Cover   Missing\n-----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_claude/codebase.py       6      0   100%\n-----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                               6      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\nclass TestFibonacci(unittest.TestCase):\n    def test_fib(self):\n        test_cases = [\n            (0, 0),\n            (1, 1),\n            (2, 1),\n            (3, 2),\n            (5, 5),\n            (10, 55),\n        ]\n        for n, expected in test_cases:\n            with self.subTest(n=n):\n                self.assertEqual(fib(n), expected)\n\n    def test_negative_input(self):\n        with self.assertRaises(RecursionError):\n            fib(-1)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\nclass TestFibonacci(unittest.TestCase):\n    def test_fib(self):\n        test_cases = [\n            (0, 0),\n            (1, 1),\n            (2, 1),\n            (3, 2),\n            (5, 5),\n            (10, 55),\n        ]\n        for n, expected in test_cases:\n            with self.subTest(n=n):\n                self.assertEqual(fib(n), expected)\n\n    def test_negative_input(self):\n        with self.assertRaises(RecursionError):\n            fib(-1)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\nclass TestFibonacci(unittest.TestCase):\n    def test_fib(self):\n        test_cases = [\n            (0, 0),\n            (1, 1),\n            (2, 1),\n            (3, 2),\n            (5, 5),\n            (10, 55),\n        ]\n        for n, expected in test_cases:\n            with self.subTest(n=n):\n                self.assertEqual(fib(n), expected)\n\n    def test_negative_input(self):\n        with self.assertRaises(RecursionError):\n            fib(-1)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "filtered_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import fib\n\nclass TestFibonacci(unittest.TestCase):\n    def test_fib(self):\n        test_cases = [\n            (0, 0),\n            (1, 1),\n            (2, 1),\n            (3, 2),\n            (5, 5),\n            (10, 55),\n        ]\n        for n, expected in test_cases:\n            with self.subTest(n=n):\n                self.assertEqual(fib(n), expected)\n\n    def test_negative_input(self):\n        with self.assertRaises(RecursionError):\n            fib(-1)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

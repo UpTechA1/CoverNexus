@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/57",
+    "prompt": "\n\ndef monotonic(l: list):\n    \"\"\"Return True is list elements are monotonically increasing or decreasing.\n    >>> monotonic([1, 2, 4, 20])\n    True\n    >>> monotonic([1, 20, 4, 10])\n    False\n    >>> monotonic([4, 1, 0, -10])\n    True\n    \"\"\"\n",
+    "canonical_solution": "    if l == sorted(l) or l == sorted(l, reverse=True):\n        return True\n    return False\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 4, 10]) == True\n    assert candidate([1, 2, 4, 20]) == True\n    assert candidate([1, 20, 4, 10]) == False\n    assert candidate([4, 1, 0, -10]) == True\n    assert candidate([4, 1, 1, 0]) == True\n    assert candidate([1, 2, 3, 2, 5, 60]) == False\n    assert candidate([1, 2, 3, 4, 5, 60]) == True\n    assert candidate([9, 9, 9, 9]) == True\n\n",
+    "entry_point": "monotonic",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "import unittest\nfrom codebase import monotonic\n\n\nclass TestMonotonic(unittest.TestCase):\n\n    def test_monotonic_increasing_1(self):\n        self.assertTrue(monotonic([1, 2, 3, 4, 5]))\n\n    def test_monotonic_decreasing_1(self):\n        self.assertTrue(monotonic([5, 4, 3, 2, 1]))\n\n    def test_monotonic_constant_1(self):\n        self.assertTrue(monotonic([1, 1, 1, 1, 1]))\n\n    def test_non_monotonic_1(self):\n        self.assertFalse(monotonic([1, 2, 3, 2, 1]))\n\n    def test_single_element_1(self):\n        self.assertTrue(monotonic([1]))\n\n    def test_empty_list_1(self):\n        self.assertTrue(monotonic([]))\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                   Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Untitled/test_coverage_multiagents/temp_test_codeqwen/codebase.py       4      0   100%\n--------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                      4      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "import unittest\nfrom codebase import monotonic\n\n\nclass TestMonotonic(unittest.TestCase):\n\n    def test_monotonic_increasing_1(self):\n        self.assertTrue(monotonic([1, 2, 3, 4, 5]))\n\n    def test_monotonic_decreasing_1(self):\n        self.assertTrue(monotonic([5, 4, 3, 2, 1]))\n\n    def test_monotonic_constant_1(self):\n        self.assertTrue(monotonic([1, 1, 1, 1, 1]))\n\n    def test_non_monotonic_1(self):\n        self.assertFalse(monotonic([1, 2, 3, 2, 1]))\n\n    def test_single_element_1(self):\n        self.assertTrue(monotonic([1]))\n\n    def test_empty_list_1(self):\n        self.assertTrue(monotonic([]))\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "import unittest\nfrom codebase import monotonic\n\n\nclass TestMonotonic(unittest.TestCase):\n\n    def test_monotonic_increasing_1(self):\n        self.assertTrue(monotonic([1, 2, 3, 4, 5]))\n\n    def test_monotonic_decreasing_1(self):\n        self.assertTrue(monotonic([5, 4, 3, 2, 1]))\n\n    def test_monotonic_constant_1(self):\n        self.assertTrue(monotonic([1, 1, 1, 1, 1]))\n\n    def test_non_monotonic_1(self):\n        self.assertFalse(monotonic([1, 2, 3, 2, 1]))\n\n    def test_single_element_1(self):\n        self.assertTrue(monotonic([1]))\n\n    def test_empty_list_1(self):\n        self.assertTrue(monotonic([]))\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "import unittest\nfrom codebase import monotonic\n\n\nclass TestMonotonic(unittest.TestCase):\n\n    def test_monotonic_increasing_1(self):\n        self.assertTrue(monotonic([1, 2, 3, 4, 5]))\n\n    def test_monotonic_decreasing_1(self):\n        self.assertTrue(monotonic([5, 4, 3, 2, 1]))\n\n    def test_monotonic_constant_1(self):\n        self.assertTrue(monotonic([1, 1, 1, 1, 1]))\n\n    def test_non_monotonic_1(self):\n        self.assertFalse(monotonic([1, 2, 3, 2, 1]))\n\n    def test_single_element_1(self):\n        self.assertTrue(monotonic([1]))\n\n    def test_empty_list_1(self):\n        self.assertTrue(monotonic([]))\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "import unittest\nfrom codebase import monotonic\n\n\nclass TestMonotonic(unittest.TestCase):\n\n    def test_monotonic_increasing_1(self):\n        self.assertTrue(monotonic([1, 2, 3, 4, 5]))\n\n    def test_monotonic_decreasing_1(self):\n        self.assertTrue(monotonic([5, 4, 3, 2, 1]))\n\n    def test_monotonic_constant_1(self):\n        self.assertTrue(monotonic([1, 1, 1, 1, 1]))\n\n    def test_non_monotonic_1(self):\n        self.assertFalse(monotonic([1, 2, 3, 2, 1]))\n\n    def test_single_element_1(self):\n        self.assertTrue(monotonic([1]))\n\n    def test_empty_list_1(self):\n        self.assertTrue(monotonic([]))\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

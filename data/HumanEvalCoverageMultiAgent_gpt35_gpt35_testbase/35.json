@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/35",
+    "prompt": "\n\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n",
+    "canonical_solution": "    m = l[0]\n    for e in l:\n        if e > m:\n            m = e\n    return m\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n    assert candidate([5, 3, -5, 2, -3, 3, 9, 0, 124, 1, -10]) == 124\n",
+    "entry_point": "max_element",
+    "testbase": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+            "coverage": 100,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "best_score_generated_test_script": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+    "first_generated_test_script": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+    "not_error_best_generated_test_script": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+    "filtered_generated_test_script": "from method import max_element\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n\n\nif __name__ == '__main__':\n    check(max_element)\n",
+    "filtered_score": 100.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

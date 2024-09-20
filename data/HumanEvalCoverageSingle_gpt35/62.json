@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/62",
+    "prompt": "\n\ndef derivative(xs: list):\n    \"\"\" xs represent coefficients of a polynomial.\n    xs[0] + xs[1] * x + xs[2] * x^2 + ....\n     Return derivative of this polynomial in the same form.\n    >>> derivative([3, 1, 2, 4, 5])\n    [1, 4, 12, 20]\n    >>> derivative([1, 2, 3])\n    [2, 6]\n    \"\"\"\n",
+    "canonical_solution": "    return [(i * x) for i, x in enumerate(xs)][1:]\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([3, 1, 2, 4, 5]) == [1, 4, 12, 20]\n    assert candidate([1, 2, 3]) == [2, 6]\n    assert candidate([3, 2, 1]) == [2, 2]\n    assert candidate([3, 2, 1, 0, 4]) == [2, 2, 0, 16]\n    assert candidate([1]) == []\n\n",
+    "entry_point": "derivative",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport codebase\n",
+            "executed_output": "Name                                                                                           Stmts   Miss  Cover   Missing\n----------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_gpt35/codebase.py       2      1    50%   12\n----------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                              2      1    50%\n",
+            "coverage": 50.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport codebase\n",
+    "first_generated_test_script": "from codebase import *\nimport codebase\n",
+    "not_error_best_generated_test_script": "from codebase import *\nimport codebase\n",
+    "filtered_generated_test_script": "from codebase import *\nimport codebase\n",
+    "exist_error": false,
+    "best_score": 50.0,
+    "first_score": 50.0,
+    "not_error_best_score": 50.0,
+    "exist_not_error": true,
+    "filtered_score": 50.0,
+    "use_filter": false
+}

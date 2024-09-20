@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/60",
+    "prompt": "\n\ndef sum_to_n(n: int):\n    \"\"\"sum_to_n is a function that sums numbers from 1 to n.\n    >>> sum_to_n(30)\n    465\n    >>> sum_to_n(100)\n    5050\n    >>> sum_to_n(5)\n    15\n    >>> sum_to_n(10)\n    55\n    >>> sum_to_n(1)\n    1\n    \"\"\"\n",
+    "canonical_solution": "    return sum(range(n + 1))\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate(1) == 1\n    assert candidate(6) == 21\n    assert candidate(11) == 66\n    assert candidate(30) == 465\n    assert candidate(100) == 5050\n\n",
+    "entry_point": "sum_to_n",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestSumToN(unittest.TestCase):\n    def test_sum_to_n(self):\n        # Test cases\n        self.assertEqual(sum_to_n(30), 465)\n        self.assertEqual(sum_to_n(100), 5050)\n        self.assertEqual(sum_to_n(5), 15)\n        self.assertEqual(sum_to_n(10), 55)\n        self.assertEqual(sum_to_n(1), 1)\n\n        # Additional test cases\n        self.assertEqual(sum_to_n(50), 1275)\n        self.assertEqual(sum_to_n(25), 325)\n        self.assertEqual(sum_to_n(1000), 500500)\n\n        # Negative numbers and zero\n        self.assertEqual(sum_to_n(-1), 0)\n        self.assertEqual(sum_to_n(0), 0)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py       2      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                 2      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestSumToN(unittest.TestCase):\n    def test_sum_to_n(self):\n        # Test cases\n        self.assertEqual(sum_to_n(30), 465)\n        self.assertEqual(sum_to_n(100), 5050)\n        self.assertEqual(sum_to_n(5), 15)\n        self.assertEqual(sum_to_n(10), 55)\n        self.assertEqual(sum_to_n(1), 1)\n\n        # Additional test cases\n        self.assertEqual(sum_to_n(50), 1275)\n        self.assertEqual(sum_to_n(25), 325)\n        self.assertEqual(sum_to_n(1000), 500500)\n\n        # Negative numbers and zero\n        self.assertEqual(sum_to_n(-1), 0)\n        self.assertEqual(sum_to_n(0), 0)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestSumToN(unittest.TestCase):\n    def test_sum_to_n(self):\n        # Test cases\n        self.assertEqual(sum_to_n(30), 465)\n        self.assertEqual(sum_to_n(100), 5050)\n        self.assertEqual(sum_to_n(5), 15)\n        self.assertEqual(sum_to_n(10), 55)\n        self.assertEqual(sum_to_n(1), 1)\n\n        # Additional test cases\n        self.assertEqual(sum_to_n(50), 1275)\n        self.assertEqual(sum_to_n(25), 325)\n        self.assertEqual(sum_to_n(1000), 500500)\n\n        # Negative numbers and zero\n        self.assertEqual(sum_to_n(-1), 0)\n        self.assertEqual(sum_to_n(0), 0)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestSumToN(unittest.TestCase):\n    def test_sum_to_n(self):\n        # Test cases\n        self.assertEqual(sum_to_n(30), 465)\n        self.assertEqual(sum_to_n(100), 5050)\n        self.assertEqual(sum_to_n(5), 15)\n        self.assertEqual(sum_to_n(10), 55)\n        self.assertEqual(sum_to_n(1), 1)\n\n        # Additional test cases\n        self.assertEqual(sum_to_n(50), 1275)\n        self.assertEqual(sum_to_n(25), 325)\n        self.assertEqual(sum_to_n(1000), 500500)\n\n        # Negative numbers and zero\n        self.assertEqual(sum_to_n(-1), 0)\n        self.assertEqual(sum_to_n(0), 0)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\n\nclass TestSumToN(unittest.TestCase):\n    def test_sum_to_n(self):\n        # Test cases\n        self.assertEqual(sum_to_n(30), 465)\n        self.assertEqual(sum_to_n(100), 5050)\n        self.assertEqual(sum_to_n(5), 15)\n        self.assertEqual(sum_to_n(10), 55)\n        self.assertEqual(sum_to_n(1), 1)\n\n        # Additional test cases\n        self.assertEqual(sum_to_n(50), 1275)\n        self.assertEqual(sum_to_n(25), 325)\n        self.assertEqual(sum_to_n(1000), 500500)\n\n        # Negative numbers and zero\n        self.assertEqual(sum_to_n(-1), 0)\n        self.assertEqual(sum_to_n(0), 0)\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

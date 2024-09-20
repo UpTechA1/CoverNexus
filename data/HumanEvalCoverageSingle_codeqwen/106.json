@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/106",
+    "prompt": "\ndef f(n):\n    \"\"\" Implement the function f that takes n as a parameter,\n    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\n    or the sum of numbers from 1 to i otherwise.\n    i starts from 1.\n    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n    Example:\n    f(5) == [1, 2, 6, 24, 15]\n    \"\"\"\n",
+    "canonical_solution": "    ret = []\n    for i in range(1,n+1):\n        if i%2 == 0:\n            x = 1\n            for j in range(1,i+1): x *= j\n            ret += [x]\n        else:\n            x = 0\n            for j in range(1,i+1): x += j\n            ret += [x]\n    return ret\n",
+    "test": "def check(candidate):\n\n    assert candidate(5) == [1, 2, 6, 24, 15]\n    assert candidate(7) == [1, 2, 6, 24, 15, 720, 28]\n    assert candidate(1) == [1]\n    assert candidate(3) == [1, 2, 6]\n",
+    "entry_point": "f",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import f\n\nclass TestF(unittest.TestCase):\n    def test_f(self):\n        self.assertEqual(f(1), [1])\n        self.assertEqual(f(2), [1, 2])\n        self.assertEqual(f(3), [1, 2, 6])\n        self.assertEqual(f(4), [1, 2, 6, 24])\n        self.assertEqual(f(5), [1, 2, 6, 24, 15])\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+            "executed_output": "Name                                                                                              Stmts   Miss  Cover   Missing\n-------------------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Coverage-Test-Agent/test_coverage_multiagents/temp_test_codeqwen/codebase.py      11      0   100%\n-------------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                                11      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import f\n\nclass TestF(unittest.TestCase):\n    def test_f(self):\n        self.assertEqual(f(1), [1])\n        self.assertEqual(f(2), [1, 2])\n        self.assertEqual(f(3), [1, 2, 6])\n        self.assertEqual(f(4), [1, 2, 6, 24])\n        self.assertEqual(f(5), [1, 2, 6, 24, 15])\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "first_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import f\n\nclass TestF(unittest.TestCase):\n    def test_f(self):\n        self.assertEqual(f(1), [1])\n        self.assertEqual(f(2), [1, 2])\n        self.assertEqual(f(3), [1, 2, 6])\n        self.assertEqual(f(4), [1, 2, 6, 24])\n        self.assertEqual(f(5), [1, 2, 6, 24, 15])\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "not_error_best_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import f\n\nclass TestF(unittest.TestCase):\n    def test_f(self):\n        self.assertEqual(f(1), [1])\n        self.assertEqual(f(2), [1, 2])\n        self.assertEqual(f(3), [1, 2, 6])\n        self.assertEqual(f(4), [1, 2, 6, 24])\n        self.assertEqual(f(5), [1, 2, 6, 24, 15])\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "filtered_generated_test_script": "from codebase import *\n\nimport unittest\nfrom codebase import f\n\nclass TestF(unittest.TestCase):\n    def test_f(self):\n        self.assertEqual(f(1), [1])\n        self.assertEqual(f(2), [1, 2])\n        self.assertEqual(f(3), [1, 2, 6])\n        self.assertEqual(f(4), [1, 2, 6, 24])\n        self.assertEqual(f(5), [1, 2, 6, 24, 15])\n\nif __name__ == '__main__':\n    unittest.main(argv=[''], exit=False)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

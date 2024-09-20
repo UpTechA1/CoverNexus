@@ -1,0 +1,25 @@
+{
+    "task_id": "HumanEval/150",
+    "prompt": "\ndef x_or_y(n, x, y):\n    \"\"\"A simple program which should return the value of x if n is \n    a prime number and should return the value of y otherwise.\n\n    Examples:\n    for x_or_y(7, 34, 12) == 34\n    for x_or_y(15, 8, 5) == 5\n    \n    \"\"\"\n",
+    "canonical_solution": "    if n == 1:\n        return y\n    for i in range(2, n):\n        if n % i == 0:\n            return y\n            break\n    else:\n        return x\n",
+    "test": "def check(candidate):\n\n    # Check some simple cases\n    assert candidate(7, 34, 12) == 34\n    assert candidate(15, 8, 5) == 5\n    assert candidate(3, 33, 5212) == 33\n    assert candidate(1259, 3, 52) == 3\n    assert candidate(7919, -1, 12) == -1\n    assert candidate(3609, 1245, 583) == 583\n    assert candidate(91, 56, 129) == 129\n    assert candidate(6, 34, 1234) == 1234\n    \n\n    # Check some edge cases that are easy to work out by hand.\n    assert candidate(1, 2, 0) == 0\n    assert candidate(2, 2, 0) == 2\n\n",
+    "entry_point": "x_or_y",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import x_or_y\n\nclass TestXOrY(unittest.TestCase):\n    def test_x_or_y(self):\n        test_cases = [\n            (1, 10, 20, 20),\n            (2, 10, 20, 10),\n            (3, 10, 20, 10),\n            (4, 10, 20, 20),\n            (5, 10, 20, 10),\n            (7, 10, 20, 10),\n            (15, 10, 20, 20),\n            (97, 10, 20, 10),\n            (100, 10, 20, 20),\n        ]\n        for n, x, y, expected in test_cases:\n            with self.subTest(n=n, x=x, y=y):\n                self.assertEqual(x_or_y(n, x, y), expected)\n\nif __name__ == '__main__':\n    unittest.main()",
+            "executed_output": "Name                                                                                         Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------------\n/Users/nguyenbathiem/Downloads/Coverage-Test-Agent/covernexus/temp_test_claude/codebase.py       7      0   100%\n--------------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                            7      0   100%\n",
+            "coverage": 100.0,
+            "exist_error": false
+        }
+    },
+    "best_score_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import x_or_y\n\nclass TestXOrY(unittest.TestCase):\n    def test_x_or_y(self):\n        test_cases = [\n            (1, 10, 20, 20),\n            (2, 10, 20, 10),\n            (3, 10, 20, 10),\n            (4, 10, 20, 20),\n            (5, 10, 20, 10),\n            (7, 10, 20, 10),\n            (15, 10, 20, 20),\n            (97, 10, 20, 10),\n            (100, 10, 20, 20),\n        ]\n        for n, x, y, expected in test_cases:\n            with self.subTest(n=n, x=x, y=y):\n                self.assertEqual(x_or_y(n, x, y), expected)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "first_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import x_or_y\n\nclass TestXOrY(unittest.TestCase):\n    def test_x_or_y(self):\n        test_cases = [\n            (1, 10, 20, 20),\n            (2, 10, 20, 10),\n            (3, 10, 20, 10),\n            (4, 10, 20, 20),\n            (5, 10, 20, 10),\n            (7, 10, 20, 10),\n            (15, 10, 20, 20),\n            (97, 10, 20, 10),\n            (100, 10, 20, 20),\n        ]\n        for n, x, y, expected in test_cases:\n            with self.subTest(n=n, x=x, y=y):\n                self.assertEqual(x_or_y(n, x, y), expected)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "not_error_best_generated_test_script": "from codebase import *\nimport unittest\nfrom codebase import x_or_y\n\nclass TestXOrY(unittest.TestCase):\n    def test_x_or_y(self):\n        test_cases = [\n            (1, 10, 20, 20),\n            (2, 10, 20, 10),\n            (3, 10, 20, 10),\n            (4, 10, 20, 20),\n            (5, 10, 20, 10),\n            (7, 10, 20, 10),\n            (15, 10, 20, 20),\n            (97, 10, 20, 10),\n            (100, 10, 20, 20),\n        ]\n        for n, x, y, expected in test_cases:\n            with self.subTest(n=n, x=x, y=y):\n                self.assertEqual(x_or_y(n, x, y), expected)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true
+}

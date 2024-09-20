@@ -1,0 +1,30 @@
+{
+    "task_id": "HumanEval/23",
+    "prompt": "\n\ndef strlen(string: str) -> int:\n    \"\"\" Return length of given string\n    >>> strlen('')\n    0\n    >>> strlen('abc')\n    3\n    \"\"\"\n",
+    "canonical_solution": "    return len(string)\n",
+    "test": "\n\nMETADATA = {\n    'author': 'jt',\n    'dataset': 'test'\n}\n\n\ndef check(candidate):\n    assert candidate('') == 0\n    assert candidate('x') == 1\n    assert candidate('asdasnakj') == 9\n",
+    "entry_point": "strlen",
+    "testbase": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "coverage": 100.0,
+    "coverage_testbase": 100.0,
+    "num_iterations_used": 0,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+            "coverage": 100.0,
+            "exist_error": false,
+            "executed_output": ""
+        }
+    },
+    "best_score_generated_test_script": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "first_generated_test_script": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "not_error_best_generated_test_script": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "filtered_generated_test_script": "from method import strlen\ndef check(candidate):\n    assert candidate('x') == 1\n\n\nif __name__ == '__main__':\n    check(strlen)\n",
+    "exist_error": false,
+    "best_score": 100.0,
+    "first_score": 100.0,
+    "not_error_best_score": 100.0,
+    "exist_not_error": true,
+    "filtered_score": 100.0,
+    "use_filter": false
+}

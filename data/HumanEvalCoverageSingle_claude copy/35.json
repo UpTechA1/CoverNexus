@@ -1,0 +1,28 @@
+{
+    "task_id": "HumanEval/35",
+    "prompt": "\n\ndef max_element(l: list):\n    \"\"\"Return maximum element in the list.\n    >>> max_element([1, 2, 3])\n    3\n    >>> max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n",
+    "canonical_solution": "    m = l[0]\n    for e in l:\n        if e > m:\n            m = e\n    return m\n",
+    "test": "\n\nMETADATA = {}\n\n\ndef check(candidate):\n    assert candidate([1, 2, 3]) == 3\n    assert candidate([5, 3, -5, 2, -3, 3, 9, 0, 124, 1, -10]) == 124\n",
+    "entry_point": "max_element",
+    "coverage": 100.0,
+    "num_iterations_used": 1,
+    "msg_trace": {
+        "1": {
+            "generated_test_script": "import unittest\nfrom codebase import max_element\n\n\nclass TestMaxElement(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(max_element([1, 2, 3]), 3)\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10\n            ]), 123)\n\n    def test_single_element_1(self):\n        self.assertEqual(max_element([42]), 42)\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(max_element([-5, -3, -1, -10]), -1)\n\n    def test_duplicate_max_1(self):\n        self.assertEqual(max_element([1, 5, 5, 3, 5]), 5)\n\n    def test_float_numbers_1(self):\n        self.assertEqual(max_element([1.5, 2.7, 3.1, 2.9]), 3.1)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+            "executed_output": "Name                                                                                   Stmts   Miss  Cover   Missing\n--------------------------------------------------------------------------------------------------------------------\n/home/pc/Documents/Untitled/test_coverage_multiagents/temp_test_codeqwen/codebase.py       6      5    17%   21-25\n--------------------------------------------------------------------------------------------------------------------\nTOTAL                                                                                      6      5    17%\n",
+            "coverage": 17.0,
+            "exist_error": false
+        }
+    },
+    "exist_error": false,
+    "best_score": 17.0,
+    "first_score": 17.0,
+    "not_error_best_score": 17.0,
+    "best_score_generated_test_script": "import unittest\nfrom codebase import max_element\n\n\nclass TestMaxElement(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(max_element([1, 2, 3]), 3)\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10\n            ]), 123)\n\n    def test_single_element_1(self):\n        self.assertEqual(max_element([42]), 42)\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(max_element([-5, -3, -1, -10]), -1)\n\n    def test_duplicate_max_1(self):\n        self.assertEqual(max_element([1, 5, 5, 3, 5]), 5)\n\n    def test_float_numbers_1(self):\n        self.assertEqual(max_element([1.5, 2.7, 3.1, 2.9]), 3.1)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "first_generated_test_script": "import unittest\nfrom codebase import max_element\n\n\nclass TestMaxElement(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(max_element([1, 2, 3]), 3)\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10\n            ]), 123)\n\n    def test_single_element_1(self):\n        self.assertEqual(max_element([42]), 42)\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(max_element([-5, -3, -1, -10]), -1)\n\n    def test_duplicate_max_1(self):\n        self.assertEqual(max_element([1, 5, 5, 3, 5]), 5)\n\n    def test_float_numbers_1(self):\n        self.assertEqual(max_element([1.5, 2.7, 3.1, 2.9]), 3.1)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "not_error_best_generated_test_script": "import unittest\nfrom codebase import max_element\n\n\nclass TestMaxElement(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(max_element([1, 2, 3]), 3)\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10\n            ]), 123)\n\n    def test_single_element_1(self):\n        self.assertEqual(max_element([42]), 42)\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(max_element([-5, -3, -1, -10]), -1)\n\n    def test_duplicate_max_1(self):\n        self.assertEqual(max_element([1, 5, 5, 3, 5]), 5)\n\n    def test_float_numbers_1(self):\n        self.assertEqual(max_element([1.5, 2.7, 3.1, 2.9]), 3.1)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_generated_test_script": "import unittest\nfrom codebase import max_element\n\n\nclass TestMaxElement(unittest.TestCase):\n\n    def test_positive_numbers_1(self):\n        self.assertEqual(max_element([1, 2, 3]), 3)\n\n    def test_mixed_numbers_1(self):\n        self.assertEqual(max_element([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10\n            ]), 123)\n\n    def test_single_element_1(self):\n        self.assertEqual(max_element([42]), 42)\n\n    def test_negative_numbers_1(self):\n        self.assertEqual(max_element([-5, -3, -1, -10]), -1)\n\n    def test_duplicate_max_1(self):\n        self.assertEqual(max_element([1, 5, 5, 3, 5]), 5)\n\n    def test_float_numbers_1(self):\n        self.assertEqual(max_element([1.5, 2.7, 3.1, 2.9]), 3.1)\n\n\nif __name__ == '__main__':\n    unittest.main()\n",
+    "filtered_score": 17.0,
+    "use_filter": false,
+    "exist_not_error": true
+}

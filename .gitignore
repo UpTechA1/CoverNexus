@@ -1,0 +1,14 @@
+.coverage
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore other cache-related files or directories if needed
+*.pyo
+*.pyd
+.DS_Store
+# Ignore log folders and files
+*.log
+log/
