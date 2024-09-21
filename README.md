@@ -4,6 +4,10 @@ CoverNexus is an innovative multi-agent system that leverages Large Language Mod
 
 CoverNexus has been rigorously evaluated using **CoverBench**, a new benchmark based on **HumanEval**, specifically designed for assessing test generation and coverage improvement. Our experiments show that CoverNexus achieves remarkable results, with **GPT-4** delivering **99.91% coverage** and **77.44% correctness** in multi-agent setups. Notably, closed-source models perform better in multi-agent configurations, while open-source models excel in single-agent scenarios. This research offers significant insights into the trade-offs between coverage and correctness, contributing to AI-assisted software testing and more efficient software development processes.
 
+### Architecture of CoverNexus
+![Demo](Architecture.png)
+
+### Demo of CoverNexus
 [![Watch the video](demo.gif)](https://youtu.be/fQ0LGiA0JdE)
 
 ---
@@ -13,10 +17,11 @@ CoverNexus has been rigorously evaluated using **CoverBench**, a new benchmark b
 The repository is organized into the following key folders and files:
 
 1. **covernexus**: Contains the core implementation of the model, along with a demo package for storing related files.
-2. **data**: Stores the original **HumanEval** and **CoverBench** datasets, along with CoverNexus evaluation results. This folder also includes `parsing.ipynb` for creating CoverBench, and additional analysis notebooks to compute results.
-3. **evaluation**: Contains logs and the script `test.py` for running experiments.
-4. **package_demo**: Includes the demo files such as codebase, test base, test generation files, and more.
-5. **Others**: Contains environment variables, required libraries, and the main application files.
+2. **coverbench**: new benchmark for assessing test generation
+3. **data**: Stores the original **HumanEval** and **CoverBench** datasets, along with CoverNexus evaluation results. This folder also includes `parsing.ipynb` for creating CoverBench, and additional analysis notebooks to compute results.
+4. **evaluation**: Contains logs and the script `test.py` for running experiments.
+5. **package_demo**: Includes the demo files such as codebase, test base, test generation files, and more.
+6. **Others**: Contains environment variables, required libraries, and the main application files.
 
 ---
 
